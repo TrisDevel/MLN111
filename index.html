@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử Triết học Chủ nghĩa Mác-Lê-nin</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom fixed-top navbar-hidden" data-aos="fade-down">
+        <div class="container">
+        
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="bi bi-book-half me-2"></i>
+                MLN History
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline">Dòng thời gian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quiz">Kiểm tra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Giới thiệu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <header id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            
+        </div>
+        <div class="container-fluid position-relative">
+            <div class="row align-items-end justify-content-start min-vh-120">
+                <div class="col-lg-5">
+                    <div class="hero-content text-start" data-aos="fade-right" data-aos-duration="1000">
+                        
+                        <p class="hero-subtitle text-light" data-aos="fade-right" data-aos-delay="100">
+                            Tiếng vọng của Lịch sử 
+                        </p>
+                        <h1 class="hero-title text-light mb-4" data-aos="fade-right" data-aos-delay="200">
+                            Khám phá Triết học
+                            Mác-Lê-nin.
+                        </h1>
+                        
+                        <p class="hero-description text-light mb-4" data-aos="fade-right" data-aos-delay="300">
+                            <strong>H</strong>ãy cùng chúng tôi khám phá hành trình phát triển của tư tưởng cách mạng, 
+                            nơi mỗi giai đoạn lịch sử là cánh cửa mở ra những tri thức mới về chủ nghĩa duy vật 
+                            biện chứng và chủ nghĩa duy vật lịch sử. Dù bạn là sinh viên triết học hay người 
+                            yêu thích tìm hiểu lịch sử, chúng tôi nỗ lực làm sống lại quá khứ qua những 
+                            câu chuyện hấp dẫn và kiến thức sâu sắc. 
+                        </p>
+                        <div class="hero-buttons" data-aos="fade-right" data-aos-delay="400">
+                            <a href="#timeline" class="btn btn-classical-hero btn-lg me-3">
+                                <i class="bi bi-clock-history me-2"></i>
+                                Khám phá lịch sử
+                            </a>
+                            <a href="#quiz" class="btn btn-outline-light-hero btn-lg">
+                                <i class="bi bi-question-circle me-2"></i>
+                                Làm bài kiểm tra
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <!-- Historical figure image will be positioned here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#timeline" class="text-light">
+                <i class="bi bi-chevron-down "></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="timeline" class="timeline-section py-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title" data-aos="fade-up">
+                            <i class="bi bi-clock-history me-3"></i>
+                            Dòng thời gian lịch sử
+                        </h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Khám phá 5 cột mốc quan trọng trong lịch sử phát triển triết học Mác-Lê-nin
+                        </p>
+                    </div>
+                </div>
+                
+                <div class=" container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <button class="" id="prevBtn" data-aos="fade-right">
+                                <i class=""></i>
+                            </button>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="timeline-wrapper" data-aos="fade-up">
+                                <div class="timeline" id="timeline">
+                                    
+                                    <!-- Milestone 1 -->
+                                    <div class="milestone-card card h-100 shadow-lg" data-milestone="1" data-aos="zoom-in" data-aos-delay="100">
+                                        <div class="card-body">
+                                            <div class="milestone-icon text-center mb-3">
+                                                <i class="bi bi-lightbulb"></i>
+                                            </div>
+                                            <h3 class="card-title text-center mb-2">Nguồn gốc & Bối cảnh</h3>
+                                            <div class="text-center mb-3">
+                                                <span class="badge bg-classical">1800-1840</span>
+                                            </div>
+                                            <div class="card-content">
+                                                <p class="card-text">Triết học Đức, kinh tế chính trị Anh, chủ nghĩa xã hội không tưởng Pháp tạo nền tảng cho tư tưởng Mác-xít.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestone 2 -->
+                                    <div class="milestone-card card h-100 shadow-lg" data-milestone="2" data-aos="zoom-in" data-aos-delay="200">
+                                        <div class="card-body">
+                                            <div class="milestone-icon">
+                                                <i class="bi bi-people"></i>
+                                            </div>
+                                            <div class="card-header border-0 bg-transparent">
+                                                <h3 class="card-title">Mác & Ăng-ghen</h3>
+                                                <span class="badge bg-classical">1840-1883</span>
+                                            </div>
+                                            <div class="card-content">
+                                                <p class="card-text">Sáng lập chủ nghĩa duy vật biện chứng và duy vật lịch sử, đặt nền móng khoa học cho phong trào công nhân.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestone 3 -->
+                                    <div class="milestone-card card h-100 shadow-lg" data-milestone="3" data-aos="zoom-in" data-aos-delay="300">
+                                        <div class="card-body">
+                                            <div class="milestone-icon">
+                                                <i class="bi bi-flag"></i>
+                                            </div>
+                                            <div class="card-header border-0 bg-transparent">
+                                                <h3 class="card-title">Lê-nin</h3>
+                                                <span class="badge bg-classical">1900-1924</span>
+                                            </div>
+                                            <div class="card-content">
+                                                <p class="card-text">Phát triển và thực tiễn hóa chủ nghĩa Mác-xít, lãnh đạo Cách mạng Tháng Mười thành công.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestone 4 -->
+                                    <div class="milestone-card card h-100 shadow-lg" data-milestone="4" data-aos="zoom-in" data-aos-delay="400">
+                                        <div class="card-body">
+                                            <div class="milestone-icon">
+                                                <i class="bi bi-geo-alt"></i>
+                                            </div>
+                                            <div class="card-header border-0 bg-transparent">
+                                                <h3 class="card-title">Chủ nghĩa Mác-Lê-nin ở Việt Nam</h3>
+                                                <span class="badge bg-classical">1920-nay</span>
+                                            </div>
+                                            <div class="card-content">
+                                                <p class="card-text">Hồ Chí Minh vận dụng sáng tạo, xây dựng con đường cách mạng phù hợp với điều kiện Việt Nam.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestone 5 -->
+                                    <div class="milestone-card card h-100 shadow-lg" data-milestone="5" data-aos="zoom-in" data-aos-delay="500">
+                                        <div class="card-body">
+                                            <div class="milestone-icon">
+                                                <i class="bi bi-globe"></i>
+                                            </div>
+                                            <div class="card-header border-0 bg-transparent">
+                                                <h3 class="card-title">Ứng dụng đương đại</h3>
+                                                <span class="badge bg-classical">1986-nay</span>
+                                            </div>
+                                            <div class="card-content">
+                                                <p class="card-text">Kinh tế thị trường định hướng xã hội chủ nghĩa, phát triển bền vững, AI và môi trường.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto">
+                            <button class="" id="nextBtn" data-aos="fade-left">
+                                <i class=""></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Philosophy Introduction Section -->
+        <section id="philosophy-intro" class="py-5 bg-light-classical">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title" data-aos="fade-up">
+                            <i class="bi bi-book me-3"></i>
+                            Triết học Mác-Lê-nin: Nền tảng lý luận
+                        </h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Hiểu sâu về hệ thống triết học khoa học và cách mạng
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="philosophy-card card h-100 shadow" data-aos="fade-right">
+                            <div class="card-body">
+                                <h4 class="card-title text-classical">
+                                    <i class="bi bi-lightbulb-fill me-2"></i>
+                                    Chủ nghĩa duy vật biện chứng
+                                </h4>
+                                <p class="card-text">
+                                    <strong>Định nghĩa:</strong> Là thế giới quan và phương pháp luận khoa học về tự nhiên, xã hội và tư duy. 
+                                    Khẳng định vật chất là gốc, ý thức là sản phẩm của vật chất, đồng thời thế giới vật chất tồn tại và vận động theo quy luật biện chứng.
+                                </p>
+                                <h6 class="text-classical">Ba quy luật cơ bản:</h6>
+                                <ul class="small">
+                                    <li><strong>Quy luật chuyển hóa từ lượng sang chất:</strong> Sự thay đổi về lượng đến một mức độ nhất định sẽ dẫn đến sự thay đổi về chất</li>
+                                    <li><strong>Quy luật thống nhất và đấu tranh của các mặt đối lập:</strong> Mọi sự vật đều chứa đựng những mặt đối lập, đấu tranh nội tại là nguồn gốc của sự vận động</li>
+                                    <li><strong>Quy luật phủ định của phủ định:</strong> Sự phát triển diễn ra theo hình xoắn ốc, kết hợp giữa tính kế thừa và phát triển</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="philosophy-card card h-100 shadow" data-aos="fade-left">
+                            <div class="card-body">
+                                <h4 class="card-title text-classical">
+                                    <i class="bi bi-clock-history me-2"></i>
+                                    Chủ nghĩa duy vật lịch sử
+                                </h4>
+                                <p class="card-text">
+                                    <strong>Định nghĩa:</strong> Là sự vận dụng chủ nghĩa duy vật biện chứng vào nghiên cứu xã hội loài người. 
+                                    Khám phá ra quy luật khách quan chi phối sự phát triển của xã hội loài người.
+                                </p>
+                                <h6 class="text-classical">Những nguyên lý cốt lõi:</h6>
+                                <ul class="small">
+                                    <li><strong>Tồn tại xã hội quyết định ý thức xã hội:</strong> Điều kiện vật chất của đời sống xã hội quyết định ý thức xã hội</li>
+                                    <li><strong>Lực lượng sản xuất quyết định quan hệ sản xuất:</strong> Trình độ phát triển của lực lượng sản xuất quyết định tính chất của quan hệ sản xuất</li>
+                                    <li><strong>Cơ sở hạ tầng quyết định kiến trúc thượng tầng:</strong> Cơ sở kinh tế quyết định các thiết chế chính trị, pháp lý, tư tưởng</li>
+                                    <li><strong>Đấu tranh giai cấp là động lực của lịch sử:</strong> Trong xã hội có giai cấp, đấu tranh giai cấp là động lực thúc đẩy xã hội phát triển</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Thinkers Section -->
+        <section id="key-thinkers" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title" data-aos="fade-up">
+                            <i class="bi bi-people me-3"></i>
+                            Các nhà tư tưởng chủ chốt
+                        </h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Khám phá đóng góp của những nhà tư tưởng vĩ đại
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="thinker-card card h-100 shadow" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="card-body text-center">
+                                <div class="thinker-avatar mb-3">
+                                    <i class="bi bi-person-circle display-1 text-classical"></i>
+                                </div>
+                                <h4 class="card-title">Karl Marx (1818-1883)</h4>
+                                <p class="text-muted">Nhà tư tưởng, nhà kinh tế học, nhà triết học</p>
+                                <div class="text-start">
+                                    <h6 class="text-classical">Những đóng góp chính:</h6>
+                                    <ul class="small">
+                                        <li>Phát triển lý thuyết giá trị thặng dư</li>
+                                        <li>Tác phẩm "Tư bản" - phân tích chế độ tư bản chủ nghĩa</li>
+                                        <li>Xây dựng chủ nghĩa duy vật lịch sử</li>
+                                        <li>Tuyên ngôn Đảng Cộng sản (cùng Engels)</li>
+                                    </ul>
+                                    <blockquote class="blockquote-footer small mt-2">
+                                        "Các triết gia chỉ giải thích thế giới bằng những cách khác nhau, vấn đề là thay đổi nó"
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4">
+                        <div class="thinker-card card h-100 shadow" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="card-body text-center">
+                                <div class="thinker-avatar mb-3">
+                                    <i class="bi bi-person-circle display-1 text-classical"></i>
+                                </div>
+                                <h4 class="card-title">V.I. Lenin (1870-1924)</h4>
+                                <p class="text-muted">Nhà cách mạng, nhà lý luận, nhà chính trị</p>
+                                <div class="text-start">
+                                    <h6 class="text-classical">Những đóng góp chính:</h6>
+                                    <ul class="small">
+                                        <li>Lý thuyết về đế quốc chủ nghĩa</li>
+                                        <li>Học thuyết về đảng kiểu mới</li>
+                                        <li>Lý luận về cách mạng xã hội chủ nghĩa</li>
+                                        <li>Thực tiễn xây dựng nhà nước xã hội chủ nghĩa</li>
+                                    </ul>
+                                    <blockquote class="blockquote-footer small mt-2">
+                                        "Không có lý thuyết cách mạng, không thể có phong trào cách mạng"
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4">
+                        <div class="thinker-card card h-100 shadow" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="card-body text-center">
+                                <div class="thinker-avatar mb-3">
+                                    <i class="bi bi-person-circle display-1 text-classical"></i>
+                                </div>
+                                <h4 class="card-title">Hồ Chí Minh (1890-1969)</h4>
+                                <p class="text-muted">Nhà tư tưởng, nhà cách mạng, Chủ tịch nước</p>
+                                <div class="text-start">
+                                    <h6 class="text-classical">Những đóng góp chính:</h6>
+                                    <ul class="small">
+                                        <li>Vận dụng sáng tạo chủ nghĩa Mác-Lê-nin</li>
+                                        <li>Tư tưởng Hồ Chí Minh về xây dựng con người</li>
+                                        <li>Kết hợp giải phóng dân tộc với giải phóng giai cấp</li>
+                                        <li>Đạo đức cách mạng: "Cần, kiệm, liêm, chính"</li>
+                                    </ul>
+                                    <blockquote class="blockquote-footer small mt-2">
+                                        "Không có gì quý hơn độc lập tự do"
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Applications Section -->
+        <section id="applications" class="py-5 bg-light-classical">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title" data-aos="fade-up">
+                            <i class="bi bi-gear me-3"></i>
+                            Ứng dụng thực tiễn
+                        </h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Triết học Mác-Lê-nin trong thực tiễn xây dựng và phát triển
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="application-card card h-100 shadow" data-aos="slide-up">
+                            <div class="card-header bg-classical text-white">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-building me-2"></i>
+                                    Trong chính trị - xã hội
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="text-classical">Xây dựng nhà nước pháp quyền xã hội chủ nghĩa:</h6>
+                                <ul class="small mb-3">
+                                    <li>Dân chủ xã hội chủ nghĩa: quyền làm chủ của nhân dân</li>
+                                    <li>Pháp chế xã hội chủ nghĩa: pháp luật phục vụ nhân dân</li>
+                                    <li>Công bằng xã hội: phân phối theo lao động, bảo đảm an sinh</li>
+                                    <li>Đoàn kết dân tộc: khối đại đoàn kết toàn dân</li>
+                                </ul>
+                                
+                                <h6 class="text-classical">Đổi mới tư duy quản lý:</h6>
+                                <ul class="small">
+                                    <li>Từ quản lý hành chính sang quản lý theo pháp luật</li>
+                                    <li>Phân cấp, phân quyền, tăng tính tự chủ</li>
+                                    <li>Minh bạch, công khai trong hoạt động công quyền</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="application-card card h-100 shadow" data-aos="slide-up" data-aos-delay="200">
+                            <div class="card-header bg-classical text-white">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-graph-up me-2"></i>
+                                    Trong kinh tế
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="text-classical">Kinh tế thị trường định hướng xã hội chủ nghĩa:</h6>
+                                <ul class="small mb-3">
+                                    <li>Kết hợp kế hoạch hóa với cơ chế thị trường</li>
+                                    <li>Nhiều hình thức sở hữu, nhiều thành phần kinh tế</li>
+                                    <li>Nhà nước điều tiết vĩ mô, thị trường điều tiết vi mô</li>
+                                    <li>Phát triển bền vững, công bằng xã hội</li>
+                                </ul>
+                                
+                                <h6 class="text-classical">Chuyển đổi số và công nghiệp 4.0:</h6>
+                                <ul class="small">
+                                    <li>Ứng dụng công nghệ thông tin trong quản lý</li>
+                                    <li>Phát triển kinh tế số, xã hội số</li>
+                                    <li>Đổi mới mô hình tăng trưởng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="application-card card h-100 shadow" data-aos="slide-up" data-aos-delay="300">
+                            <div class="card-header bg-classical text-white">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-mortarboard me-2"></i>
+                                    Trong giáo dục
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="text-classical">Giáo dục toàn diện:</h6>
+                                <ul class="small mb-3">
+                                    <li>Kết hợp giáo dục trí tuệ, thể chất, thẩm mỹ</li>
+                                    <li>Giáo dục tư tưởng chính trị và đạo đức</li>
+                                    <li>Liên kết giáo dục với lao động sản xuất</li>
+                                    <li>Phát triển năng lực tư duy sáng tạo</li>
+                                </ul>
+                                
+                                <h6 class="text-classical">Cải cách giáo dục:</h6>
+                                <ul class="small">
+                                    <li>Đổi mới phương pháp dạy và học</li>
+                                    <li>Ứng dụng công nghệ thông tin</li>
+                                    <li>Gắn đào tạo với nhu cầu xã hội</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="application-card card h-100 shadow" data-aos="slide-up" data-aos-delay="400">
+                            <div class="card-header bg-classical text-white">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-globe me-2"></i>
+                                    Trong quan hệ quốc tế
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="text-classical">Ngoại giao đa phương:</h6>
+                                <ul class="small mb-3">
+                                    <li>Hòa bình, hữu nghị, hợp tác và phát triển</li>
+                                    <li>Đa dạng hóa, đa phương hóa quan hệ quốc tế</li>
+                                    <li>Chủ động và tích cực hội nhập quốc tế</li>
+                                    <li>Là bạn tin cậy của các nước trên thế giới</li>
+                                </ul>
+                                
+                                <h6 class="text-classical">Đối ngoại kinh tế:</h6>
+                                <ul class="small">
+                                    <li>Mở cửa, hội nhập kinh tế quốc tế</li>
+                                    <li>Thu hút đầu tư nước ngoài</li>
+                                    <li>Tham gia chuỗi giá trị toàn cầu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title" data-aos="fade-up">
+                            <i class="bi bi-journal-bookmark me-3"></i>
+                            Tài liệu tham khảo
+                        </h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Các tài liệu chuẩn để nghiên cứu sâu về triết học Mác-Lê-nin
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="resource-card card h-100 shadow" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title text-classical">
+                                    <i class="bi bi-book me-2"></i>
+                                    Tác phẩm gốc
+                                </h5>
+                                <div class="resource-list">
+                                    <div class="resource-item mb-3">
+                                        <h6 class="mb-1">Karl Marx</h6>
+                                        <ul class="small mb-2">
+                                            <li>Tư bản (Das Kapital) - 3 tập</li>
+                                            <li>Luận cương về Feuerbach</li>
+                                            <li>Ý thức hệ Đức (cùng Engels)</li>
+                                            <li>Tuyên ngôn của Đảng Cộng sản (cùng Engels)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="resource-item mb-3">
+                                        <h6 class="mb-1">V.I. Lenin</h6>
+                                        <ul class="small mb-2">
+                                            <li>Chủ nghĩa đế quốc - giai đoạn cao nhất của chủ nghĩa tư bản</li>
+                                            <li>Nhà nước và cách mạng</li>
+                                            <li>Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán</li>
+                                            <li>Làm gì? (về tổ chức đảng)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="resource-item">
+                                        <h6 class="mb-1">Hồ Chí Minh</h6>
+                                        <ul class="small">
+                                            <li>Toàn tập Hồ Chí Minh - 15 tập</li>
+                                            <li>Đường Kách Mệnh</li>
+                                            <li>Sửa đổi lối làm việc</li>
+                                            <li>Di chúc</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="resource-card card h-100 shadow" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-body">
+                                <h5 class="card-title text-classical">
+                                    <i class="bi bi-journal-text me-2"></i>
+                                    Tài liệu nghiên cứu
+                                </h5>
+                                <div class="resource-list">
+                                    <div class="resource-item mb-3">
+                                        <h6 class="mb-1">Giáo trình chuẩn</h6>
+                                        <ul class="small mb-2">
+                                            <li>Giáo trình Triết học Mác-Lê-nin (NXB Chính trị Quốc gia)</li>
+                                            <li>Những nguyên lý cơ bản của chủ nghĩa Mác-Lê-nin</li>
+                                            <li>Triết học Mác-Lê-nin - Những vấn đề lý luận và thực tiễn</li>
+                                        </ul>
+                                    </div>
+                                    <div class="resource-item mb-3">
+                                        <h6 class="mb-1">Tạp chí khoa học</h6>
+                                        <ul class="small mb-2">
+                                            <li>Tạp chí Triết học</li>
+                                            <li>Tạp chí Lý luận chính trị</li>
+                                            <li>Tạp chí Cộng sản</li>
+                                            <li>Nghiên cứu Triết học</li>
+                                        </ul>
+                                    </div>
+                                    <div class="resource-item">
+                                        <h6 class="mb-1">Website học thuật</h6>
+                                        <ul class="small">
+                                            <li>Học viện Chính trị Quốc gia Hồ Chí Minh</li>
+                                            <li>Viện Triết học - Viện Hàn lâm KHXH Việt Nam</li>
+                                            <li>Cổng thông tin Lý luận chính trị</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section py-5 bg-light-classical">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title" data-aos="fade-up">
+                            <i class="bi bi-question-circle me-3"></i>
+                            Kiểm tra kiến thức
+                        </h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Hãy thử thách bản thân với 3 câu hỏi về lịch sử triết học Mác-Lê-nin
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="quiz-container">
+                            <div class="question card shadow mb-4" data-question="1" data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="question-number">1</span>
+                                        <h3 class="card-title mb-0">Ba nguồn gốc tư tưởng của chủ nghĩa Mác-xít là gì?</h3>
+                                    </div>
+                                    <div class="options">
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q1" value="a" id="q1a">
+                                            <label class="form-check-label" for="q1a">
+                                                A. Triết học Đức, kinh tế chính trị Anh, chủ nghĩa xã hội không tưởng Pháp
+                                            </label>
+                                        </div>
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q1" value="b" id="q1b">
+                                            <label class="form-check-label" for="q1b">
+                                                B. Triết học Hy Lạp, kinh tế Mỹ, chính trị Nga
+                                            </label>
+                                        </div>
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q1" value="c" id="q1c">
+                                            <label class="form-check-label" for="q1c">
+                                                C. Văn học Pháp, khoa học Đức, chính trị Anh
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question card shadow mb-4" data-question="2" data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="question-number">2</span>
+                                        <h3 class="card-title mb-0">Ai là người vận dụng sáng tạo chủ nghĩa Mác-Lê-nin vào điều kiện Việt Nam?</h3>
+                                    </div>
+                                    <div class="options">
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q2" value="a" id="q2a">
+                                            <label class="form-check-label" for="q2a">
+                                                A. Võ Nguyên Giáp
+                                            </label>
+                                        </div>
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q2" value="b" id="q2b">
+                                            <label class="form-check-label" for="q2b">
+                                                B. Hồ Chí Minh
+                                            </label>
+                                        </div>
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q2" value="c" id="q2c">
+                                            <label class="form-check-label" for="q2c">
+                                                C. Trường Chinh
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question card shadow mb-4" data-question="3" data-aos="fade-up" data-aos-delay="300">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="question-number">3</span>
+                                        <h3 class="card-title mb-0">Cách mạng Tháng Mười diễn ra vào năm nào?</h3>
+                                    </div>
+                                    <div class="options">
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q3" value="a" id="q3a">
+                                            <label class="form-check-label" for="q3a">
+                                                A. 1916
+                                            </label>
+                                        </div>
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q3" value="b" id="q3b">
+                                            <label class="form-check-label" for="q3b">
+                                                B. 1917
+                                            </label>
+                                        </div>
+                                        <div class="form-check option-item">
+                                            <input class="form-check-input" type="radio" name="q3" value="c" id="q3c">
+                                            <label class="form-check-label" for="q3c">
+                                                C. 1918
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                                <button class="btn btn-classical btn-lg px-5" onclick="checkQuiz()">
+                                    <i class="bi bi-check-circle me-2"></i>
+                                    Kiểm tra kết quả
+                                </button>
+                            </div>
+                            
+                            <div class="quiz-result mt-4" id="quizResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about" class="bg-dark-classical text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="about-section" data-aos="fade-up">
+                        <h3 class="mb-4">
+                            <i class="bi bi-people-fill me-3"></i>
+                            Thông tin nhóm
+                        </h3>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card bg-transparent border-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-classical-light">Nhóm nghiên cứu MLN111</h5>
+                                        <p class="card-text">
+                                            <strong>Thành viên:</strong><br>
+                                            <span class="badge bg-classical-light me-2 mb-2">Nguyễn Văn A</span>
+                                            <span class="badge bg-classical-light me-2 mb-2">Trần Thị B</span>
+                                            <span class="badge bg-classical-light me-2 mb-2">Lê Văn C</span>
+                                        </p>
+                                        <div class="mt-4">
+                                            <div class="row text-center">
+                                                <div class="col-4">
+                                                    <i class="bi bi-mortarboard fs-2 text-classical-light"></i>
+                                                    <p class="small mt-2">Nghiên cứu</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <i class="bi bi-laptop fs-2 text-classical-light"></i>
+                                                    <p class="small mt-2">Phát triển</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <i class="bi bi-presentation fs-2 text-classical-light"></i>
+                                                    <p class="small mt-2">Trình bày</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4 border-light">
+                        <p class="copyright small">
+                            <i class="bi bi-c-circle me-1"></i>
+                            2024 - Dự án nghiên cứu Triết học Mác-Lê-nin
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for milestone details -->
+    <div class="modal fade" id="milestoneModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content classical-modal">
+                <div class="modal-header border-bottom-classical">
+                    <h5 class="modal-title" id="modalLabel">
+                        <i class="bi bi-book me-2"></i>
+                        Chi tiết lịch sử
+                    </h5>
+                    <button type="button" class="btn-close btn-close-classical" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body classical-content" id="modalBody">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer border-top-classical">
+                    <button type="button" class="btn btn-outline-classical" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>
+                        Đóng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
