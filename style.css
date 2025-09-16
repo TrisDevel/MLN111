@@ -695,7 +695,6 @@ footer::before {
     height: 1150px;
     background: url('./pic/2.png') center/cover no-repeat,
         linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.6) 50%, rgba(26, 26, 26, 0.9) 100%);
-    background-blend-mode: overlay;
     z-index: -2;
 }
 
