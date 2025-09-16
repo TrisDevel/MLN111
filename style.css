@@ -280,11 +280,19 @@ body::before {
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: 1.5rem !important;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    font-size: 0.9rem !important;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    text-align: justify;
 }
 
 .subtitle {
@@ -684,79 +692,14 @@ footer::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 1150px;
     background: url('./pic/2.png') center/cover no-repeat,
         linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.6) 50%, rgba(26, 26, 26, 0.9) 100%);
     background-blend-mode: overlay;
     z-index: -2;
 }
 
-/* .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.7) 35%,
-        rgba(0, 0, 0, 0.4) 60%,
-        rgba(0, 0, 0, 0.1) 80%,
-        transparent 100%
-    );
-    z-index: -1;
-}
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 550px;
-    padding-left: 2rem;
-    margin-top: -3rem;
-}
-
-.hero-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-style: italic;
-    color: #b8860b !important;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-.hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.8rem;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #ffffff !important;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    margin-bottom: 1.5rem;
-}
-
-.hero-description {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.95) !important;
-    margin-bottom: 2.5rem;
-    text-align: justify;
-    max-width: 500px;
-}
-
-.hero-description strong {
-    font-size: 3.5rem;
-    line-height: 0.8;
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    color: #b8860b;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-} */
 
 .hero-content {
     
@@ -766,32 +709,15 @@ footer::before {
 }
 
 .hero-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.1rem !important;
     font-style: italic;
     color: #b8860b !important;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+    margin-bottom: 1rem !important;
+    letter-spacing: 1px !important;
     text-transform: uppercase;
 }
 
-.hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #ffffff !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 2rem;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9) !important;
-    margin-bottom: 3rem;
-    text-align: justify;
-}
 
 .hero-description strong {
     font-size: 4rem;
@@ -1387,4 +1313,10 @@ footer {
     .timeline {
         gap: 1rem;
     }
+}
+
+.thinker-image {
+
+    max-width: -webkit-fill-available;
+
 }
