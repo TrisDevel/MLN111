@@ -40,32 +40,56 @@ document.addEventListener('DOMContentLoaded', function() {
 // Navbar scroll behavior
 function initNavbarScrollBehavior() {
     const navbar = document.querySelector('.navbar');
-    const timelineSection = document.getElementById('timeline');
+    const philosophyOverviewSection = document.getElementById('philosophy-overview');
     
     // Hide navbar initially
     navbar.classList.add('navbar-hidden');
     navbar.classList.remove('navbar-visible');
     
-    // Create intersection observer for timeline section
-    const timelineObserver = new IntersectionObserver((entries) => {
+    // Create intersection observer for philosophy overview section
+    const philosophyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Timeline is visible - show navbar
+                // Philosophy overview is visible - show navbar and keep it visible
                 navbar.classList.remove('navbar-hidden');
                 navbar.classList.add('navbar-visible');
-            } else {
-                // Timeline is not visible - hide navbar
-                navbar.classList.add('navbar-hidden');
-                navbar.classList.remove('navbar-visible');
+                
+                // Once navbar is shown, stop observing and keep it visible
+                philosophyObserver.disconnect();
+                
+                // Add scroll listener to keep navbar visible for rest of page
+                window.addEventListener('scroll', keepNavbarVisible);
             }
         });
     }, {
         threshold: 0.1,
-        rootMargin: '-100px 0px 0px 0px' // Show navbar when timeline is 100px from top
+        rootMargin: '-100px 0px 0px 0px' // Show navbar when philosophy overview is 100px from top
     });
     
-    // Start observing the timeline section
-    timelineObserver.observe(timelineSection);
+    // Start observing the philosophy overview section
+    if (philosophyOverviewSection) {
+        philosophyObserver.observe(philosophyOverviewSection);
+    }
+}
+
+// Function to keep navbar visible once it's shown
+function keepNavbarVisible() {
+    const navbar = document.querySelector('.navbar');
+    const philosophyOverviewSection = document.getElementById('philosophy-overview');
+    
+    if (philosophyOverviewSection) {
+        const philosophyTop = philosophyOverviewSection.offsetTop - 100;
+        
+        // If we're at or past the philosophy overview section, keep navbar visible
+        if (window.scrollY >= philosophyTop) {
+            navbar.classList.remove('navbar-hidden');
+            navbar.classList.add('navbar-visible');
+        } else {
+            // If we scroll back up above philosophy overview, hide navbar again
+            navbar.classList.add('navbar-hidden');
+            navbar.classList.remove('navbar-visible');
+        }
+    }
 }
 
 // Navbar scroll effect - only for styling when visible
