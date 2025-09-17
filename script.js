@@ -404,6 +404,9 @@ function setupEventListeners() {
     
     // Navbar scroll effect
     window.addEventListener('scroll', handleNavbarScroll);
+    
+    // Add scroll listener for dropdown active state
+    window.addEventListener('scroll', updateDropdownOnScroll);
 }
 
 // Function to detect current section and update dropdown active state
@@ -722,3 +725,158 @@ function setHeroBackground() {
     console.log('Using simple local background: lenin-monument.jpg');
     // No JavaScript effects needed
 }
+
+// Feedback and rating functions
+function submitRating(type) {
+    const button = event.target.closest('button');
+    const originalText = button.innerHTML;
+    
+    // Visual feedback
+    button.disabled = true;
+    
+    if (type === 'positive') {
+        button.innerHTML = '<i class="bi bi-check-circle me-1"></i>Cảm ơn!';
+        button.className = 'btn btn-sm btn-success';
+        
+        // Show thank you message
+        showFeedbackMessage('Cảm ơn bạn đã đánh giá tích cực! Phản hồi của bạn giúp chúng tôi rất nhiều.', 'success');
+    } else {
+        button.innerHTML = '<i class="bi bi-check-circle me-1"></i>Đã ghi nhận';
+        button.className = 'btn btn-sm btn-info';
+        
+        // Show improvement message
+        showFeedbackMessage('Cảm ơn phản hồi! Chúng tôi sẽ cố gắng cải thiện để mang lại trải nghiệm tốt hơn.', 'info');
+    }
+    
+    // Reset button after 3 seconds
+    setTimeout(() => {
+        button.disabled = false;
+        button.innerHTML = originalText;
+        button.className = type === 'positive' ? 'btn btn-sm btn-success me-1' : 'btn btn-sm btn-secondary';
+    }, 3000);
+    
+    // Log rating (in real application, this would be sent to server)
+    console.log(`User rating: ${type} at ${new Date().toISOString()}`);
+}
+
+function showFeedbackMessage(message, type) {
+    // Create toast notification
+    const toastContainer = document.getElementById('toast-container') || createToastContainer();
+    
+    const toast = document.createElement('div');
+    toast.className = `toast align-items-center text-white bg-${type} border-0`;
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'assertive');
+    toast.setAttribute('aria-atomic', 'true');
+    
+    toast.innerHTML = `
+        <div class="d-flex">
+            <div class="toast-body">
+                <i class="bi bi-check-circle me-2"></i>
+                ${message}
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    `;
+    
+    toastContainer.appendChild(toast);
+    
+    const bsToast = new bootstrap.Toast(toast, {
+        delay: 4000
+    });
+    
+    bsToast.show();
+    
+    // Remove toast element after it's hidden
+    toast.addEventListener('hidden.bs.toast', () => {
+        toast.remove();
+    });
+}
+
+function createToastContainer() {
+    const container = document.createElement('div');
+    container.id = 'toast-container';
+    container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+    container.style.zIndex = '9999';
+    document.body.appendChild(container);
+    return container;
+}
+
+// Enhanced email functionality
+function openFeedbackEmail(type) {
+    const subject = encodeURIComponent(`${type} - Triết học Mác-Lê-nin`);
+    const body = encodeURIComponent(`
+Xin chào nhóm phát triển,
+
+Tôi muốn ${type.toLowerCase()} về website Triết học Mác-Lê-nin:
+
+[Vui lòng mô tả chi tiết ở đây]
+
+Thông tin bổ sung:
+- Thời gian truy cập: ${new Date().toLocaleString('vi-VN')}
+- Trình duyệt: ${navigator.userAgent}
+- URL trang: ${window.location.href}
+
+Cảm ơn!
+    `);
+    
+    const email = type === 'Góp ý nội dung' ? 
+        'feedback@mln-history.edu.vn' : 
+        'error-report@mln-history.edu.vn';
+    
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+}
+
+// Add click handlers for email links
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+    
+    // Add feedback email handlers
+    document.querySelectorAll('a[href^="mailto:feedback"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            openFeedbackEmail('Góp ý nội dung');
+        });
+    });
+    
+    document.querySelectorAll('a[href^="mailto:error-report"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            openFeedbackEmail('Báo lỗi');
+        });
+    });
+});
+
+// Track user engagement for feedback purposes
+function trackUserEngagement() {
+    const engagementData = {
+        timeSpent: Date.now() - (window.loadTime || Date.now()),
+        sectionsVisited: [],
+        quizCompleted: false,
+        modalOpened: false
+    };
+    
+    // Track sections visited
+    const sections = ['philosophy-overview', 'timeline', 'philosophy-intro', 'key-thinkers', 'applications', 'resources', 'quiz'];
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !engagementData.sectionsVisited.includes(sectionId)) {
+                        engagementData.sectionsVisited.push(sectionId);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(section);
+        }
+    });
+    
+    // Store engagement data for feedback context
+    window.userEngagement = engagementData;
+}
+
+// Initialize engagement tracking
+window.loadTime = Date.now();
+trackUserEngagement();

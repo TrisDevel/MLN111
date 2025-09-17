@@ -18,6 +18,11 @@
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+.thinker-image {
+    max-width: -webkit-fill-available;
+}
+
 /* Global Styles */
 * {
     margin: 0;
@@ -1228,156 +1233,135 @@ section h2::after {
 
 /* Footer */
 footer {
-    background: rgba(139, 115, 85, 0.1);
-    border-top: 3px solid #8b7355;
-    padding: 2rem;
-    margin-top: 3rem;
-}
-
-.about-section {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.about-section p {
-    margin-bottom: 0.5rem;
-    color: #4a4a4a;
-}
-
-.copyright {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #8b7355;
-    font-style: italic;
-}
-
-/* Philosophy Overview Section Styling */
-.overview-card {
-    transition: var(--transition);
-    border: none !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-}
-
-.overview-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-.overview-card .card-header {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.aspect-card {
-    background: rgba(244, 241, 232, 0.8) !important;
-    transition: var(--transition);
-}
-
-.aspect-card:hover {
-    background: rgba(244, 241, 232, 1) !important;
-    transform: translateY(-2px);
-}
-
-.philosophy-school {
-    background: rgba(255, 255, 255, 0.8) !important;
-    transition: var(--transition);
-}
-
-.philosophy-school:hover {
-    background: rgba(255, 255, 255, 1) !important;
-    transform: scale(1.02);
-}
-
-.period-card {
-    background: rgba(255, 255, 255, 0.9) !important;
-    transition: var(--transition);
-    border: 2px solid rgba(139, 115, 85, 0.2) !important;
-}
-
-.period-card:hover {
-    background: rgba(255, 255, 255, 1) !important;
-    border-color: var(--classical-primary) !important;
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-soft);
-}
-
-.period-icon {
-    transition: var(--transition);
-}
-
-.period-card:hover .period-icon {
-    transform: scale(1.1);
-}
-
-.philosophers {
-    border-top: 1px solid rgba(139, 115, 85, 0.3);
-    padding-top: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.timeline-philosophy {
     position: relative;
 }
 
-.timeline-philosophy::before {
+footer::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--classical-primary), var(--classical-accent));
-    z-index: -1;
-    display: none; /* Hide on mobile */
+    height: 4px;
+    background: linear-gradient(90deg, var(--classical-primary), var(--classical-accent), var(--classical-primary));
 }
 
-.thinker-image {
-    max-width: -webkit-fill-available;
+.feedback-section .card {
+    transition: var(--transition);
 }
 
-@media (min-width: 992px) {
-    .timeline-philosophy::before {
-        display: block;
-    }
+.feedback-section .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
 }
 
-/* Enhanced alert styling */
-.alert-info {
-    background: rgba(139, 115, 85, 0.1) !important;
-    border: 1px solid var(--classical-primary) !important;
-    color: var(--classical-text) !important;
+.feedback-item {
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
 }
 
-/* Responsive adjustments */
+.feedback-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.rating-buttons .btn {
+    transition: var(--transition);
+}
+
+.rating-buttons .btn:hover {
+    transform: translateY(-1px);
+}
+
+.contact-info {
+    background: rgba(139, 115, 85, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--classical-light);
+}
+
+.badge.bg-classical-light {
+    background: var(--classical-light) !important;
+    color: var(--classical-secondary) !important;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+/* Toast notifications */
+.toast-container {
+    z-index: 9999;
+}
+
+.toast {
+    min-width: 300px;
+}
+
+/* Email link styling */
+.feedback-section a[href^="mailto"] {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.feedback-section a[href^="mailto"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for footer */
 @media (max-width: 768px) {
-    .period-card {
+    .feedback-item {
         margin-bottom: 1rem;
+        padding: 0.75rem;
     }
     
-    .overview-card .card-body {
-        padding: 1rem;
+    .rating-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
     
-    .aspect-card {
+    .rating-buttons .btn {
+        width: 100%;
+    }
+    
+    .contact-info {
+        padding: 0.75rem;
+    }
+    
+    .about-section .row.text-center {
+        margin-top: 1rem;
+    }
+    
+    .about-section .col-4 {
         margin-bottom: 1rem;
     }
 }
 
 @media (max-width: 576px) {
-    .section-title {
-        font-size: 2rem;
+    footer .col-lg-6 {
+        margin-bottom: 2rem;
     }
     
-    .period-icon {
-        font-size: 1.5rem !important;
+    .feedback-section h4,
+    .about-section h4 {
+        font-size: 1.2rem;
     }
     
-    .philosophers {
-        font-size: 0.75rem;
+    .badge.bg-classical-light {
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
     }
+}
+
+/* Animation for feedback interactions */
+@keyframes feedbackSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn:disabled {
+    animation: feedbackSuccess 0.3s ease;
 }
