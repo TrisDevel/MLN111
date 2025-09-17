@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set the background image for hero section
     setHeroBackground();
 
-    
     // Initialize AOS
     AOS.init({
         duration: 1000,
@@ -35,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize navbar scroll behavior
     initNavbarScrollBehavior();
+    
+    // Initialize dropdown animations
+    initDropdownAnimations();
+    
+    // Set initial active dropdown item
+    updateActiveDropdownItem('#philosophy-overview');
 });
 
 // Navbar scroll behavior
@@ -128,9 +133,90 @@ function setupSmoothScrolling() {
                     const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                     bsCollapse.hide();
                 }
+                
+                // Close dropdown if open
+                const dropdownMenu = document.querySelector('.dropdown-menu.show');
+                if (dropdownMenu) {
+                    const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('.dropdown-toggle'));
+                    if (dropdown) {
+                        dropdown.hide();
+                    }
+                }
+                
+                // Update active dropdown item
+                updateActiveDropdownItem(this.getAttribute('href'));
             }
         });
     });
+}
+
+// Function to update active dropdown item based on current section
+function updateActiveDropdownItem(targetHref) {
+    // Remove active class from all dropdown items
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Add active class to current item
+    const currentItem = document.querySelector(`.dropdown-item[href="${targetHref}"]`);
+    if (currentItem) {
+        currentItem.classList.add('active');
+    }
+}
+
+// Function to handle dropdown animations
+function initDropdownAnimations() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu-custom');
+    
+    if (dropdownToggle && dropdownMenu) {
+        // Handle dropdown show/hide events
+        dropdownToggle.addEventListener('shown.bs.dropdown', function () {
+            dropdownMenu.classList.add('show');
+        });
+        
+        dropdownToggle.addEventListener('hidden.bs.dropdown', function () {
+            dropdownMenu.classList.remove('show');
+        });
+        
+        // Handle hover effects on desktop
+        if (window.innerWidth > 768) {
+            const dropdown = dropdownToggle.closest('.dropdown');
+            
+            dropdown.addEventListener('mouseenter', function() {
+                const dropdownInstance = new bootstrap.Dropdown(dropdownToggle);
+                dropdownInstance.show();
+            });
+            
+            dropdown.addEventListener('mouseleave', function() {
+                const dropdownInstance = bootstrap.Dropdown.getInstance(dropdownToggle);
+                if (dropdownInstance) {
+                    dropdownInstance.hide();
+                }
+            });
+        }
+    }
+}
+
+// Function to detect current section and update dropdown active state
+function updateDropdownOnScroll() {
+    const sections = ['#philosophy-overview', '#timeline', '#philosophy-intro', '#key-thinkers', '#applications', '#resources'];
+    let currentSection = '#philosophy-overview';
+    
+    sections.forEach(section => {
+        const element = document.querySelector(section);
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+            
+            if (rect.top <= navbarHeight + 100 && rect.bottom >= navbarHeight + 100) {
+                currentSection = section;
+            }
+        }
+    });
+    
+    updateActiveDropdownItem(currentSection);
 }
 
 // Milestone detailed content
@@ -318,6 +404,27 @@ function setupEventListeners() {
     
     // Navbar scroll effect
     window.addEventListener('scroll', handleNavbarScroll);
+}
+
+// Function to detect current section and update dropdown active state
+function updateDropdownOnScroll() {
+    const sections = ['#philosophy-overview', '#timeline', '#philosophy-intro', '#key-thinkers', '#applications', '#resources'];
+    let currentSection = '#philosophy-overview';
+    
+    sections.forEach(section => {
+        const element = document.querySelector(section);
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+            
+            if (rect.top <= navbarHeight + 100 && rect.bottom >= navbarHeight + 100) {
+                currentSection = section;
+            }
+        }
+    });
+    
+    updateActiveDropdownItem(currentSection);
 }
 
 function updateTimelinePosition() {

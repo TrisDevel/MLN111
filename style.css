@@ -143,7 +143,7 @@ body::before {
 }
 
 .text-classical-light {
-    color: var(--classical-light) !important;
+    color: white !important;
 }
 
 .text-gradient {
@@ -491,7 +491,7 @@ body::before {
 
 .card-text {
     color: var(--classical-text);
-    text-align: justify;
+    text-align: center;
     line-height: 1.6;
 }
 
@@ -1241,7 +1241,6 @@ footer {
 }
 
 .about-section h3 {
-    color: #5d4e37;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
