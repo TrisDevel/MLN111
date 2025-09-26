@@ -1,4 +1,4 @@
-// JavaScript for Marxism-Leninism Historical Timeline Website with Bootstrap
+// JavaScript for Ho Chi Minh Thought Historical Timeline Website with Bootstrap
 
 // Timeline navigation variables
 let currentPosition = 0;
@@ -222,150 +222,332 @@ function updateDropdownOnScroll() {
 // Milestone detailed content
 const milestoneDetails = {
     1: {
-        title: "Nguồn gốc & Bối cảnh (1800-1840)",
+        title: "Thưa niên và hình thành (1890-1911)",
         content: `
-            <p>Chủ nghĩa Mác-xít ra đời từ ba nguồn gốc tư tưởng chính:</p>
+            <p>Nguyễn Sinh Cung (sau này là Hồ Chí Minh) sinh ngày 19/5/1890 tại làng Sen, xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An trong một gia đình có truyền thống yêu nước.</p>
             
-            <h4>1. Triết học Đức</h4>
-            <p>Đại diện bởi triết học cổ điển Đức với Kant, Fichte, Schelling và đặc biệt là Hegel với triết học biện chứng. Hegel đã phát triển phương pháp biện chứng nhưng trong khuôn khổ duy tâm. Feuerbach sau đó đã phê phán duy tâm và đề xuất chủ nghĩa duy vật, tạo nền tảng cho Mác phát triển chủ nghĩa duy vật biện chứng.</p>
+            <h4>1. Môi trường gia đình và quê hương</h4>
+            <p>Cha là Nguyễn Sinh Sắc (Nguyễn Sinh Huy), một nhà nho yêu nước, từng làm quan nhưng bỏ quan vì không chịu nổi cảnh nô lệ. Mẹ là bà Hoàng Thị Loan, người phụ nữ hiền lành, đảm đang. Quê hương Nghệ An là vùng đất có truyền thống đấu tranh yêu nước lâu đời.</p>
             
-            <h4>2. Kinh tế chính trị Anh</h4>
-            <p>Với Adam Smith và David Ricardo, kinh tế chính trị Anh đã phân tích cấu trúc kinh tế tư bản chủ nghĩa, lý thuyết giá trị lao động. Mác đã kế thừa và phát triển những thành tựu này để xây dựng lý thuyết về giá trị thặng dư và quy luật vận động của chế độ tư bản chủ nghĩa.</p>
+            <h4>2. Thời thơ ấu và niên thiếu</h4>
+            <p>Từ nhỏ, Nguyễn Sinh Cung đã thể hiện tính cách thông minh, ham học hỏi và tinh thần yêu nước. Năm 1895, gia đình chuyển về Huế, nơi ông học tại trường Quốc học Huế từ 1907-1909.</p>
             
-            <h4>3. Chủ nghĩa xã hội không tưởng Pháp</h4>
-            <p>Saint-Simon, Fourier, Owen đã chỉ ra những mâu thuẫn của chế độ tư bản chủ nghĩa và đề xuất xã hội mới. Tuy nhiên, họ chưa tìm ra con đường thực hiện. Mác-Ăng-ghen đã kế thừa lý tưởng xã hội công bằng và tìm ra con đường cách mạng để thực hiện.</p>
-        `
-    },
-    1: {
-        title: "Nguồn gốc & Bối cảnh (1800-1840)",
-        content: `
-            <p>Chủ nghĩa Mác-xít ra đời từ ba nguồn gốc tư tưởng chính:</p>
+            <h5>Những ảnh hưởng sớm:</h5>
+            <ul>
+                <li>Chứng kiến cảnh đau khổ của dân tộc dưới ách đô hộ Pháp</li>
+                <li>Tiếp xúc với phong trào Duy Tân và tư tưởng cải cách</li>
+                <li>Được cha truyền dạy lòng yêu nước và tinh thần bất khuất</li>
+                <li>Học hỏi từ những nhà yêu nước như Phan Bội Châu, Phan Chu Trinh</li>
+            </ul>
             
-            <h4>1. Triết học Đức</h4>
-            <p>Đại diện bởi triết học cổ điển Đức với Kant, Fichte, Schelling và đặc biệt là Hegel với triết học biện chứng. Hegel đã phát triển phương pháp biện chứng nhưng trong khuôn khổ duy tâm. Feuerbach sau đó đã phê phán duy tâm và đề xuất chủ nghĩa duy vật, tạo nền tảng cho Mác phát triển chủ nghĩa duy vật biện chứng.</p>
+            <h4>3. Hình thành ý thức yêu nước</h4>
+            <p>Giai đoạn này, tâm hồn trẻ thơ của Hồ Chí Minh đã được hun đúc bởi:</p>
+            <ul>
+                <li>Tình yêu sâu sắc dành cho đất nước và dân tộc</li>
+                <li>Lòng căm thù kẻ thù xâm lược</li>
+                <li>Khát vọng tìm ra con đường cứu nước</li>
+                <li>Tinh thần học hỏi không ngừng</li>
+            </ul>
             
-            <h4>2. Kinh tế chính trị Anh</h4>
-            <p>Với Adam Smith và David Ricardo, kinh tế chính trị Anh đã phân tích cấu trúc kinh tế tư bản chủ nghĩa, lý thuyết giá trị lao động. Mác đã kế thừa và phát triển những thành tựu này để xây dựng lý thuyết về giá trị thặng dư và quy luật vận động của chế độ tư bản chủ nghĩa.</p>
-            
-            <h4>3. Chủ nghĩa xã hội không tưởng Pháp</h4>
-            <p>Saint-Simon, Fourier, Owen đã chỉ ra những mâu thuẫn của chế độ tư bản chủ nghĩa và đề xuất xã hội mới. Tuy nhiên, họ chưa tìm ra con đường thực hiện. Mác-Ăng-ghen đã kế thừa lý tưởng xã hội công bằng và tìm ra con đường cách mạng để thực hiện.</p>
+            <h4>Ý nghĩa lịch sử:</h4>
+            <p>Giai đoạn thưa niên này đã hình thành nên nền tảng tư tưởng yêu nước sâu sắc, tình yêu dân tộc mãnh liệt và khát vong giải phóng tổ quốc - những giá trị cốt lõi sẽ xuyên suốt cuộc đời hoạt động cách mạng của Người.</p>
         `
     },
     2: {
-        title: "Mác & Ăng-ghen (1840-1883)",
+        title: "Ra đi tìm đường cứu nước (1911-1920)",
         content: `
-            <p>Karl Marx (1818-1883) và Friedrich Engels (1820-1895) là những người sáng lập chủ nghĩa Mác-xít, tạo ra một cuộc cách mạng trong tư duy về xã hội và lịch sử.</p>
+            <p>Năm 1911, với ước mơ tìm đường cứu nước, Nguyễn Tất Thành lên tàu Amiral Latouche-Tréville rời cảng Nhà Rồng (Sài Gòn) ra đi tìm hiểu thế giới.</p>
             
-            <h4>Những đóng góp chính:</h4>
+            <h4>1. Cuộc hành trình khắp năm châu</h4>
+            <p>Trong gần 10 năm (1911-1920), Hồ Chí Minh đã đi qua nhiều quốc gia, làm nhiều nghề khác nhau để tìm hiểu thế giới và con đường cứu nước.</p>
             
-            <h5>1. Chủ nghĩa duy vật biện chứng</h5>
-            <p>Kết hợp phương pháp biện chứng của Hegel với chủ nghĩa duy vật của Feuerbach, tạo ra một công cụ khoa học để nhận thức thế giới. Ba quy luật cơ bản: quy luật chuyển hóa từ lượng sang chất, quy luật thống nhất và đấu tranh của các mặt đối lập, quy luật phủ định của phủ định.</p>
+            <h5>Những điểm đến chính:</h5>
+            <ul>
+                <li><strong>Pháp (1917-1923):</strong> Làm thợ rửa ảnh, phụ bếp, công nhân. Tham gia hoạt động chính trị, viết báo</li>
+                <li><strong>Anh:</strong> Làm việc trên tàu biển, tiếp xúc với phong trào công nhân</li>
+                <li><strong>Mỹ:</strong> Quan sát xã hội tư bản chủ nghĩa phát triển</li>
+                <li><strong>Châu Phi:</strong> Chứng kiến thực dân phương Tây bóc lột các dân tộc</li>
+            </ul>
             
-            <h5>2. Chủ nghĩa duy vật lịch sử</h5>
-            <p>Phát hiện quy luật vận động của xã hội loài người: lực lượng sản xuất quyết định quan hệ sản xuất, cơ sở hạ tầng quyết định kiến trúc thượng tầng. Đấu tranh giai cấp là động lực phát triển xã hội.</p>
+            <h4>2. Những trải nghiệm quan trọng</h4>
+            <p>Qua cuộc sống lao động vất vả, Hồ Chí Minh đã:</p>
+            <ul>
+                <li>Hiểu sâu sắc về đời sống của tầng lớp lao động</li>
+                <li>Chứng kiến sự bất công trong xã hội tư bản chủ nghĩa</li>
+                <li>Nhận thức được tình đoàn kết của các dân tộc bị áp bức</li>
+                <li>Học được nhiều ngoại ngữ và kinh nghiệm sống</li>
+            </ul>
             
-            <h5>3. Kinh tế chính trị Mác-xít</h5>
-            <p>Lý thuyết giá trị thặng dư, phân tích bản chất bóc lột của chế độ tư bản chủ nghĩa. Tác phẩm "Tư bản" là kiệt tác phân tích khoa học về chế độ tư bản chủ nghĩa.</p>
+            <h4>3. Bước đầu hoạt động chính trị</h4>
+            <p>Tại Pháp (1917-1923), với tên Nguyễn Ái Quốc, Người đã:</p>
+            <ul>
+                <li>Tham gia Hội người Việt yêu nước tại Pháp</li>
+                <li>Viết nhiều bài báo phê phán chế độ thực dân</li>
+                <li>Gửi "Bản yêu sách 8 điều" tới Hội nghị Versailles (1919)</li>
+                <li>Sáng lập báo "Le Paria" (Kẻ cùng đinh) năm 1922</li>
+            </ul>
             
-            <h5>4. Chủ nghĩa xã hội khoa học</h5>
-            <p>Xác định giai cấp công nhân là lực lượng cách mạng, đề ra con đường cách mạng vô sản để xây dựng xã hội xã hội chủ nghĩa và cộng sản chủ nghĩa.</p>
+            <h4>4. Tiếp cận với các tư tưởng giải phóng</h4>
+            <p>Trong thời gian này, Hồ Chí Minh đã tìm hiểu nhiều tư tưởng khác nhau:</p>
+            <ul>
+                <li>Dân chủ tư sản phương Tây</li>
+                <li>Các phong trào giải phóng dân tộc</li>
+                <li>Tư tưởng xã hội chủ nghĩa không tưởng</li>
+                <li>Phong trào công nhân quốc tế</li>
+            </ul>
+            
+            <h4>Ý nghĩa lịch sử:</h4>
+            <p>Giai đoạn "ra đi tìm đường cứu nước" đã giúp Hồ Chí Minh mở rộng tầm nhìn, tích lũy kinh nghiệm và chuẩn bị cho việc lựa chọn con đường cách mạng phù hợp với Việt Nam. Đây là tiền đề quan trọng để Người tiếp cận với chủ nghĩa Mác-Lê-nin.</p>
         `
     },
     3: {
-        title: "Lê-nin (1900-1924)",
+        title: "Tiếp cận tư tưởng tiến bộ (1920-1930)",
         content: `
-            <p>Vladimir Ilyich Lenin (1870-1924) đã phát triển chủ nghĩa Mác-xít trong điều kiện mới của thời đại đế quốc chủ nghĩa và cách mạng vô sản.</p>
+            <p>Năm 1920, khi đọc "Luận cương của Lenin về vấn đề dân tộc và thuộc địa", Nguyễn Ái Quốc đã tìm thấy con đường cứu nước chân chính.</p>
             
-            <h4>Những đóng góp lý luận quan trọng:</h4>
+            <h4>1. Sự lựa chọn lịch sử (1920)</h4>
+            <p>Tại Đại hội Tours của Đảng Xã hội Pháp (tháng 12/1920), Nguyễn Ái Quốc đã bỏ phiếu tán thành gia nhập Quốc tế Cộng sản lần thứ III, trở thành một trong những người sáng lập Đảng Cộng sản Pháp.</p>
             
-            <h5>1. Lý luận về đế quốc chủ nghĩa</h5>
-            <p>Phân tích đế quốc chủ nghĩa là giai đoạn cao nhất và cuối cùng của chủ nghĩa tư bản, có 5 dấu hiệu cơ bản: độc quyền, tư bản tài chính, xuất khẩu tư bản, các liên minh quốc tế độc quyển chia chốn thế giới, việc chia chốn thế giới hoàn tất.</p>
+            <h5>Lý do lựa chọn tư tưởng tiến bộ:</h5>
+            <ul>
+                <li><strong>Tính khoa học:</strong> Mác-Lê-nin chỉ ra quy luật phát triển khách quan của xã hội</li>
+                <li><strong>Tính cách mạng:</strong> Đề ra con đường đấu tranh cách mạng quyết liệt</li>
+                <li><strong>Tính quốc tế:</strong> Liên kết đấu tranh giải phóng các dân tộc</li>
+                <li><strong>Quan tâm đến vấn đề thuộc địa:</strong> Lenin đặc biệt chú ý đến các dân tộc bị áp bức</li>
+            </ul>
             
-            <h5>2. Lý luận về cách mạng</h5>
-            <p>Phát triển lý luận về cách mạng xã hội chủ nghĩa có thể thắng lợi trước tiên ở một nước hoặc một nhóm nước, không nhất thiết phải đồng thời ở tất cả các nước.</p>
+            <h4>2. Hoạt động tuyên truyền và tổ chức (1920-1924)</h4>
+            <p>Từ 1920-1924, tại Pháp, Hồ Chí Minh đã:</p>
+            <ul>
+                <li>Nghiên cứu sâu các tác phẩm của Marx, Engels, Lenin</li>
+                <li>Viết nhiều bài báo tuyên truyền tư tưởng tiến bộ</li>
+                <li>Thành lập Hội Liên hiệp thuộc địa (1921)</li>
+                <li>Xuất bản báo "Le Paria" rồi "Le Proscrit"</li>
+                <li>Tham gia các hoạt động của Đảng Cộng sản Pháp</li>
+            </ul>
             
-            <h5>3. Lý luận về đảng kiểu mới</h5>
-            <p>Xây dựng đảng cách mạng kiểu mới - đảng của giai cấp công nhân với tổ chức chặt chẽ, kỷ luật nghiêm minh, có vai trò lãnh đạo cách mạng.</p>
+            <h4>3. Học tập và tu nghiệp tại Liên Xô (1924-1925)</h4>
+            <p>Tại Liên Xô, Hồ Chí Minh đã:</p>
+            <ul>
+                <li>Học tại Trường Đại học Phương Đông</li>
+                <li>Nghiên cứu lý thuyết tiến bộ một cách có hệ thống</li>
+                <li>Viết tác phẩm "Bản án chế độ thực dân Pháp"</li>
+                <li>Tham gia Đại hội V Quốc tế Cộng sản</li>
+                <li>Chuẩn bị kế hoạch hoạt động cách mạng tại Đông Nam Á</li>
+            </ul>
             
-            <h4>Thực tiễn cách mạng:</h4>
-            <p>Lãnh đạo Cách mạng Tháng Mười Nga năm 1917 thành công, lập nên nhà nước xã hội chủ nghĩa đầu tiên trên thế giới. Đây là bước ngoặt lịch sử, mở ra kỷ nguyên mới - kỷ nguyên chuyển từ chủ nghĩa tư bản lên chủ nghĩa xã hội trên phạm vi thế giới.</p>
+            <h4>4. Hoạt động tại Trung Quốc (1925-1930)</h4>
+            <p>Giai đoạn quan trọng trong việc chuẩn bị thành lập Đảng:</p>
+            <ul>
+                <li>Thành lập Hội Việt Nam Cách mạng Thanh niên (1925)</li>
+                <li>Mở lớp huấn luyện cán bộ cách mạng</li>
+                <li>Viết "Đường Kách Mệnh" - cẩm nang cách mạng</li>
+                <li>Chuẩn bị điều kiện thành lập Đảng Cộng sản Việt Nam</li>
+            </ul>
             
-            <h5>Chính sách NEP (Tân Kinh tế)</h5>
-            <p>Sau chiến tranh cộng sản, Lenin đề ra chính sách Tân Kinh tế (1921), cho phép tồn tại một số thành phần kinh tế tư nhân, thể hiện tính linh hoạt trong xây dựng xã hội chủ nghĩa.</p>
+            <h4>5. Quá trình vận dụng sáng tạo</h4>
+            <p>Hồ Chí Minh không máy móc áp dụng mà sáng tạo vận dụng:</p>
+            <ul>
+                <li><strong>Kết hợp giải phóng dân tộc với giải phóng giai cấp</strong></li>
+                <li><strong>Xây dựng khối đại đoàn kết dân tộc</strong></li>
+                <li><strong>Vận dụng theo điều kiện Việt Nam</strong></li>
+                <li><strong>Giữ gìn bản sắc dân tộc</strong></li>
+            </ul>
+            
+            <h4>Ý nghĩa lịch sử:</h4>
+            <p>Giai đoạn này đánh dấu sự trưởng thành về tư tưởng chính trị của Hồ Chí Minh. Từ một người yêu nước đơn thuần, Người đã trở thành một nhà cách mạng chuyên nghiệp, nắm vững lý thuyết Mác-Lê-nin và biết vận dụng sáng tạo vào điều kiện cụ thể của Việt Nam.</p>
         `
     },
     4: {
-        title: "Chủ nghĩa Mác-Lê-nin ở Việt Nam (1920-nay)",
+        title: "Lãnh đạo cách mạng và kháng chiến (1930-1954)",
         content: `
-            <p>Hồ Chí Minh (1890-1969) đã vận dụng sáng tạo chủ nghĩa Mác-Lê-nin vào điều kiện cụ thể của Việt Nam, tạo ra tư tưởng Hồ Chí Minh.</p>
+            <p>Từ 1930 đến 1954, Hồ Chí Minh đã lãnh đạo dân tộc Việt Nam qua những giai đoạn lịch sử hết sức khốc liệt và vinh quang.</p>
             
-            <h4>Quá trình tiếp nhận và vận dụng:</h4>
+            <h4>1. Thành lập Đảng Cộng sản Việt Nam (1930)</h4>
+            <p>Ngày 3/2/1930, tại Hồng Kông, Hồ Chí Minh đã:</p>
+            <ul>
+                <li>Thống nhất 3 tổ chức cộng sản thành Đảng Cộng sản Việt Nam</li>
+                <li>Soạn thảo Cương lĩnh chính trị đầu tiên của Đảng</li>
+                <li>Xác định nhiệm vụ cách mạng dân tộc dân chủ nhân dân</li>
+                <li>Đề ra đường lối kết hợp giải phóng dân tộc với giải phóng giai cấp</li>
+            </ul>
             
-            <h5>1. Giai đoạn tìm hiểu và tiếp nhận (1911-1930)</h5>
-            <p>Hồ Chí Minh tìm hiểu các tư tưởng giải phóng, từ dân chủ tư sản đến chủ nghĩa xã hội. Cách mạng Tháng Mười Nga và Luận cương về vấn đề dân tộc và thuộc địa của Lenin đã thuyết phục Hồ Chí Minh theo con đường cách mạng vô sản.</p>
+            <h4>2. Thời kỳ hoạt động bí mật (1930-1941)</h4>
+            <p>Giai đoạn khó khăn nhưng quan trọng trong việc xây dựng lực lượng:</p>
             
-            <h5>2. Giai đoạn vận dụng sáng tạo (1930-1945)</h5>
-            <p>Thành lập Đảng Cộng sản Việt Nam (1930), xây dựng đường lối cách mạng dân tộc dân chủ nhân dân, kết hợp giải phóng dân tộc với giải phóng giai cấp và con người.</p>
+            <h5>Những thử thách:</h5>
+            <ul>
+                <li>Bị thực dân Pháp truy nã gắt gao</li>
+                <li>Phải hoạt động bí mật, thường xuyên thay đổi địa điểm</li>
+                <li>Đảng và cách mạng gặp nhiều khó khăn, thử thách</li>
+                <li>Cần xây dựng và củng cố tổ chức cách mạng</li>
+            </ul>
             
-            <h4>Những đóng góp sáng tạo:</h4>
+            <h5>Những đóng góp:</h5>
+            <ul>
+                <li>Chỉ đạo Đảng vượt qua khủng hoảng "Trái khuynh" (1930-1932)</li>
+                <li>Xây dựng đường lối kháng Nhật cứu nước</li>
+                <li>Chuẩn bị lực lượng cho cơ hội cách mạng</li>
+            </ul>
             
-            <h5>1. Kết hợp chặt chẽ giải phóng dân tộc với giải phóng giai cấp</h5>
-            <p>Trong điều kiện Việt Nam là nước thuộc địa, Hồ Chí Minh đã kết hợp nhiệm vụ giải phóng dân tộc với giải phóng giai cấp, lấy giải phóng dân tộc làm nhiệm vụ trước mắt và cấp bách nhất.</p>
+            <h4>3. Cách mạng Tháng Tám và nền Độc lập (1945)</h4>
+            <p>Thành công lịch sử vĩ đại nhất của dân tộc Việt Nam:</p>
             
-            <h5>2. Đường lối cách mạng dân tộc dân chủ nhân dân</h5>
-            <p>Xây dựng mặt trận thống nhất rộng rãi, đoàn kết tất cả các tầng lớp nhân dân có thể đoàn kết được để chống kẻ thù chung.</p>
+            <h5>Chuẩn bị cách mạng:</h5>
+            <ul>
+                <li>Về nước (1941), thành lập Mặt trận Việt Minh</li>
+                <li>Xây dựng căn cứ địa Việt Bắc</li>
+                <li>Chuẩn bị lực lượng vũ trang</li>
+                <li>Chỉ đạo khởi nghĩa Tháng Tám</li>
+            </ul>
             
-            <h5>3. Tư tưởng về xây dựng con người mới</h5>
-            <p>Đề cao phẩm chất đạo đức cách mạng: "Cần, kiệm, liêm, chính, chí công vô tư". Kết hợp giáo dục với lao động, lý luận với thực tiễn.</p>
+            <h5>Tuyên ngôn Độc lập (2/9/1945):</h5>
+            <p>Tại Quảng trường Ba Đình, Hà Nội, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa với những nội dung:</p>
+            <ul>
+                <li>Khẳng định chân lý "Tất cả mọi người đều sinh ra có quyền bình đẳng"</li>
+                <li>Tố cáo tội ác của thực dân Pháp</li>
+                <li>Tuyên bố độc lập của dân tộc Việt Nam</li>
+                <li>Kêu gọi đoàn kết quốc tế</li>
+            </ul>
             
-            <h4>Kết quả lịch sử:</h4>
-            <p>Cách mạng Tháng Tám 1945 thành công, thành lập nước Việt Nam Dân chủ Cộng hòa. Chiến thắng trong hai cuộc kháng chiến chống Pháp và Mỹ, thống nhất đất nước năm 1975.</p>
+            <h4>4. Kháng chiến chống Pháp (1946-1954)</h4>
+            <p>Cuộc chiến tranh nhân dân toàn diện đầu tiên:</p>
+            
+            <h5>Đường lối kháng chiến:</h5>
+            <ul>
+                <li>"Toàn dân, toàn diện, trường kỳ, tự lực cánh sinh"</li>
+                <li>Kết hợp đấu tranh vũ trang với đấu tranh chính trị, ngoại giao</li>
+                <li>Xây dựng hậu phương vững chắc</li>
+                <li>Tranh thủ sự ủng hộ của nhân dân thế giới</li>
+            </ul>
+            
+            <h5>Chiến thắng Điện Biên Phủ (1954):</h5>
+            <p>"Lừng lẫy năm châu, chấn động địa cầu" - Chiến thắng Điện Biên Phủ đã:</p>
+            <ul>
+                <li>Bẻ gãy hoàn toàn ý chí xâm lược của thực dân Pháp</li>
+                <li>Buộc Pháp ký Hiệp định Genève (1954)</li>
+                <li>Khẳng định sức mạnh của chiến tranh nhân dân</li>
+                <li>Cổ vũ phong trào giải phóng dân tộc trên thế giới</li>
+            </ul>
+            
+            <h4>5. Tư tưởng lãnh đạo của Hồ Chí Minh</h4>
+            <ul>
+                <li><strong>Đoàn kết:</strong> "Đoàn kết, đoàn kết, đại đoàn kết"</li>
+                <li><strong>Nhân dân:</strong> "Dân là gốc", "Nước có thể mất, dân không thể nô lệ"</li>
+                <li><strong>Hy sinh:</strong> "Không có gì quý hơn độc lập tự do"</li>
+                <li><strong>Kiên trung:</strong> "Thà hy sinh tất cả, chứ không chịu mất nước"</li>
+            </ul>
+            
+            <h4>Ý nghĩa lịch sử:</h4>
+            <p>24 năm lãnh đạo cách mạng và kháng chiến (1930-1954) đã chứng minh tài năng lãnh đạo xuất chúng của Hồ Chí Minh. Người đã biến tư tưởng Mác-Lê-nin thành hiện thực sống động tại Việt Nam, dẫn dắt dân tộc từ thành công này đến thành công khác.</p>
         `
     },
     5: {
-        title: "Ứng dụng đương đại (1986-nay)",
+        title: "Di sản tư tưởng (1954-nay)",
         content: `
-            <p>Từ Đại hội VI (1986), Đảng Cộng sản Việt Nam đã đề ra đường lối đổi mới, vận dụng sáng tạo chủ nghĩa Mác-Lê-nin trong điều kiện mới.</p>
+            <p>Từ 1954 đến nay, tư tưởng Hồ Chí Minh đã trở thành kim chỉ nam soi sáng con đường phát triển của dân tộc Việt Nam.</p>
             
-            <h4>1. Kinh tế thị trường định hướng xã hội chủ nghĩa</h4>
-            <p>Đây là mô hình kinh tế độc đáo, kết hợp cơ chế thị trường với định hướng xã hội chủ nghĩa. Nhiều thành phần kinh tế cùng tồn tại và phát triển, nhưng dưới sự lãnh đạo của Đảng và quản lý của Nhà nước.</p>
+            <h4>1. Giai đoạn xây dựng chủ nghĩa xã hội ở miền Bắc (1954-1975)</h4>
+            <p>Dưới sự chỉ đạo của Hồ Chí Minh, miền Bắc đã:</p>
             
-            <h5>Đặc điểm:</h5>
+            <h5>Cải cách ruộng đất và phát triển kinh tế:</h5>
             <ul>
-                <li>Kinh tế nhà nước giữ vai trò chủ đạo</li>
-                <li>Kinh tế tập thể phát triển mạnh</li>
-                <li>Kinh tế tư nhân là động lực quan trọng</li>
-                <li>Kinh tế có vốn đầu tư nước ngoài được khuyến khích</li>
+                <li>Thực hiện cải cách ruộng đất, giải phóng nông dân</li>
+                <li>Xây dựng nền kinh tế quốc dân độc lập, tự chủ</li>
+                <li>Phát triển công nghiệp, nông nghiệp xã hội chủ nghĩa</li>
+                <li>Xóa nạn đói, giảm nghèo đáng kể</li>
             </ul>
             
-            <h4>2. Phát triển bền vững</h4>
-            <p>Việt Nam đã sớm nhận thức tầm quan trọng của phát triển bền vững, cân bằng giữa phát triển kinh tế, tiến bộ xã hội và bảo vệ môi trường.</p>
-            
-            <h5>Các chính sách chính:</h5>
+            <h5>Cách mạng văn hóa xã hội:</h5>
             <ul>
-                <li>Chiến lược tăng trưởng xanh</li>
-                <li>Chuyển đổi năng lượng sạch</li>
-                <li>Bảo vệ đa dạng sinh học</li>
-                <li>Ứng phó biến đổi khí hậu</li>
+                <li>Xóa nạn mù chữ, phổ cập giáo dục</li>
+                <li>Xây dựng nền văn hóa dân tộc, khoa học, đại chúng</li>
+                <li>Giải phóng phụ nữ, bình đẳng giới</li>
+                <li>Xây dựng con người mới xã hội chủ nghĩa</li>
             </ul>
             
-            <h4>3. Ứng dụng trí tuệ nhân tạo (AI)</h4>
-            <p>Trong bối cảnh cuộc cách mạng công nghiệp 4.0, Việt Nam đang tích cực ứng dụng AI vào phát triển kinh tế-xã hội.</p>
+            <h4>2. Kháng chiến chống Mỹ và thống nhất đất nước (1954-1975)</h4>
+            <p>Tư tưởng Hồ Chí Minh về giải phóng miền Nam, thống nhất Tổ quốc:</p>
             
-            <h5>Các lĩnh vực ưu tiên:</h5>
+            <h5>Tư tưởng về thống nhất:</h5>
             <ul>
-                <li>Chính phủ điện tử, chính phủ số</li>
-                <li>Y tế thông minh</li>
-                <li>Giáo dục trực tuyến</li>
-                <li>Nông nghiệp thông minh</li>
-                <li>Giao thông thông minh</li>
+                <li>"Bắc Nam cùng một dòng máu" - tình đoàn kết dân tộc</li>
+                <li>Kiên trì đấu tranh để thống nhất đất nước</li>
+                <li>Kết hợp đấu tranh quân sự, chính trị, ngoại giao</li>
+                <li>Tranh thủ sự ủng hộ của bạn bè quốc tế</li>
             </ul>
             
-            <h4>4. Bảo vệ môi trường</h4>
-            <p>Cam kết đạt mức phát thải ròng bằng 0 vào năm 2050, phát triển kinh tế tuần hoàn, giảm thiểu rác thải nhựa.</p>
+            <h5>Di chúc thiêng liêng (1969):</h5>
+            <p>Trước khi từ trần, Hồ Chí Minh để lại Di chúc với những lời căn dặn:</p>
+            <ul>
+                <li>Về sự nghiệp cách mạng: Kiên trì đấu tranh đến thắng lợi cuối cùng</li>
+                <li>Về xây dựng Đảng: "Đảng phải thật trong sạch, thật mạnh"</li>
+                <li>Về xây dựng con người: "Cần, kiệm, liêm, chính, chí công vô tư"</li>
+                <li>Về đoàn kết: "Đoàn kết là truyền thống quý báu của Đảng và của dân ta"</li>
+            </ul>
             
-            <h4>Thành tựu và triển vọng:</h4>
-            <p>Sau hơn 35 năm đổi mới, Việt Nam đã đạt được những thành tựu to lớn: GDP tăng trưởng bình quân 6-7%/năm, đời sống nhân dân được cải thiện đáng kể, vị thế quốc tế ngày càng được nâng cao. Việt Nam đang hướng tới mục tiêu trở thành nước phát triển, thu nhập cao vào năm 2045.</p>
+            <h4>3. Thời kỳ Đổi mới (1986-nay)</h4>
+            <p>Tư tưởng Hồ Chí Minh được vận dụng sáng tạo trong thời kỳ mới:</p>
+            
+            <h5>Đổi mới tư duy phát triển:</h5>
+            <ul>
+                <li>Kinh tế thị trường định hướng xã hội chủ nghĩa</li>
+                <li>Hội nhập quốc tế nhưng giữ vững độc lập, chủ quyền</li>
+                <li>Phát triển toàn diện, bền vững</li>
+                <li>Lấy dân làm gốc, vì dân phục vụ</li>
+            </ul>
+            
+            <h5>Xây dựng nhà nước pháp quyền:</h5>
+            <ul>
+                <li>Nhà nước của dân, do dân, vì dân</li>
+                <li>Dân chủ xã hội chủ nghĩa</li>
+                <li>Pháp chế xã hội chủ nghĩa</li>
+                <li>Đảm bảo quyền con người</li>
+            </ul>
+            
+            <h4>4. Những giá trị cốt lõi của tư tưởng Hồ Chí Minh</h4>
+            
+            <h5>Về lý tưởng, mục tiêu:</h5>
+            <ul>
+                <li><strong>Độc lập dân tộc:</strong> "Không có gì quý hơn độc lập tự do"</li>
+                <li><strong>Chủ nghĩa xã hội:</strong> Xã hội không có người bóc lột người</li>
+                <li><strong>Dân chủ:</strong> "Dân là gốc" - quyền làm chủ của nhân dân</li>
+            </ul>
+            
+            <h5>Về phương pháp, con đường:</h5>
+            <ul>
+                <li><strong>Đoàn kết:</strong> Sức mạnh từ khối đại đoàn kết toàn dân tộc</li>
+                <li><strong>Kết hợp:</strong> Cách mạng dân tộc và cách mạng xã hội</li>
+                <li><strong>Quốc tế:</strong> Kết hợp sức mạnh dân tộc với sức mạnh thời đại</li>
+            </ul>
+            
+            <h5>Về đạo đức, nhân cách:</h5>
+            <ul>
+                <li><strong>Cần kiệm liêm chính:</strong> Phẩm chất đạo đức người cộng sản</li>
+                <li><strong>Vì nước vì dân:</strong> "Sống là để phụng sự Tổ quốc, phụng sự nhân dân"</li>
+                <li><strong>Học tập suốt đời:</strong> "Học, học nữa, học mãi"</li>
+            </ul>
+            
+            <h4>5. Tư tưởng Hồ Chí Minh trong thời đại mới</h4>
+            
+            <h5>Ứng dụng trong xây dựng đất nước:</h5>
+            <ul>
+                <li>Xây dựng nền kinh tế thị trường định hướng xã hội chủ nghĩa</li>
+                <li>Phát triển văn hóa, giáo dục, khoa học công nghệ</li>
+                <li>Bảo vệ môi trường, phát triển bền vững</li>
+                <li>Xây dựng con người Việt Nam thời kỳ mới</li>
+            </ul>
+            
+            <h5>Ứng dụng trong quan hệ quốc tế:</h5>
+            <ul>
+                <li>"Việt Nam muốn làm bạn với tất cả các nước trên thế giới"</li>
+                <li>Hòa bình, hữu nghị, hợp tác và phát triển</li>
+                <li>Đa dạng hóa, đa phương hóa quan hệ đối ngoại</li>
+                <li>Tích cực hội nhập quốc tế</li>
+            </ul>
+            
+            <h4>Ý nghĩa và giá trị thời đại:</h4>
+            <p>Tư tưởng Hồ Chí Minh không chỉ là di sản quý báu của dân tộc Việt Nam mà còn đóng góp vào kho tàng tư tưởng tiến bộ của nhân loại. Trong bối cảnh hiện tại, tư tưởng Hồ Chí Minh vẫn là ngọn đèn soi sáng con đường phát triển của đất nước, hướng tới mục tiêu xây dựng Việt Nam trở thành nước phát triển, có thu nhập cao vào năm 2045.</p>
         `
     }
 };
@@ -477,9 +659,9 @@ function handleKeyboard(e) {
 
 // Enhanced quiz answers with more philosophical depth
 const quizAnswers = {
-    q1: 'a', // Triết học Đức, kinh tế chính trị Anh, chủ nghĩa xã hội không tưởng Pháp
-    q2: 'b', // Hồ Chí Minh
-    q3: 'b', // 1917
+    q1: 'a', // "Dân là gốc" - nhân dân là nguồn gốc của quyền lực
+    q2: 'a', // Cán bộ đảng viên và người công tác
+    q3: 'b', // 2/9/1945 - Ngày đọc Tuyên ngôn Độc lập
     q4: 'a', // Quy luật chuyển hóa từ lượng sang chất
     q5: 'c', // Lực lượng sản xuất quyết định quan hệ sản xuất
     q6: 'b'  // Kinh tế thị trường định hướng xã hội chủ nghĩa
@@ -487,12 +669,12 @@ const quizAnswers = {
 
 // Add more detailed quiz explanations
 const quizExplanations = {
-    q1: "Ba nguồn gốc tư tưởng của chủ nghĩa Mác-xít là triết học cổ điển Đức (đặc biệt là triết học Hegel và Feuerbach), kinh tế chính trị cổ điển Anh (Adam Smith, David Ricardo), và chủ nghĩa xã hội không tưởng Pháp (Saint-Simon, Fourier, Owen).",
-    q2: "Chủ tịch Hồ Chí Minh đã vận dụng sáng tạo chủ nghĩa Mác-Lê-nin vào điều kiện cụ thể của Việt Nam, tạo ra tư tưởng Hồ Chí Minh - một hệ thống tư tưởng hoàn chỉnh về cách mạng và xây dựng chủ nghĩa xã hội ở Việt Nam.",
-    q3: "Cách mạng Tháng Mười Nga diễn ra năm 1917 dưới sự lãnh đạo của V.I. Lenin và Đảng Bolshevik, đánh dấu sự ra đời của nhà nước xã hội chủ nghĩa đầu tiên trên thế giới.",
-    q4: "Quy luật chuyển hóa từ lượng sang chất thể hiện rằng sự tích lũy những thay đổi về lượng đến một giới hạn nhất định sẽ dẫn đến sự thay đổi căn bản về chất, tạo ra sự vật mới.",
-    q5: "Theo chủ nghĩa duy vật lịch sử, lực lượng sản xuất (bao gồm người lao động, tư liệu lao động và đối tượng lao động) quyết định tính chất của quan hệ sản xuất.",
-    q6: "Kinh tế thị trường định hướng xã hội chủ nghĩa là mô hình kinh tế độc đáo của Việt Nam, kết hợp cơ chế thị trường với định hướng và mục tiêu xã hội chủ nghĩa."
+    q1: 'Tư tưởng "Dân là gốc" của Hồ Chí Minh thể hiện rõ ràng nhất tinh thần dân chủ, khẳng định nhân dân là nguồn gốc của mọi quyền lực, là chủ thể của lịch sử và cách mạng.',
+    q2: 'Tiêu chuẩn đạo đức "Cần, kiệm, liêm, chính" do Hồ Chí Minh đề ra áp dụng cho đội ngũ cán bộ, đảng viên và người công tác để họ trở thành tấm gương sáng cho nhân dân noi theo.',
+    q3: 'Tuyên ngôn Độc lập nước Việt Nam Dân chủ Cộng hòa do Chủ tịch Hồ Chí Minh đọc vào ngày 2 tháng 9 năm 1945 tại Quảng trường Ba Đình, Hà Nội, khai sinh ra nước Việt Nam độc lập.',
+    q4: 'Quy luật chuyển hóa từ lượng sang chất thể hiện rằng sự tích lũy những thay đổi về lượng đến một giới hạn nhất định sẽ dẫn đến sự thay đổi căn bản về chất, tạo ra sự vật mới.',
+    q5: 'Theo chủ nghĩa duy vật lịch sử, lực lượng sản xuất (bao gồm người lao động, tư liệu lao động và đối tượng lao động) quyết định tính chất của quan hệ sản xuất.',
+    q6: 'Kinh tế thị trường định hướng xã hội chủ nghĩa là mô hình kinh tế độc đáo của Việt Nam, kết hợp cơ chế thị trường với định hướng và mục tiêu xã hội chủ nghĩa.'
 };
 
 // Modal functions
@@ -552,7 +734,7 @@ function checkQuiz() {
     let resultIcon = '';
     
     if (percentage >= 80) {
-        resultText += " - Xuất sắc! Bạn đã nắm vững kiến thức về lịch sử Chủ nghĩa Mác-Lê-nin.";
+        resultText += " - Xuất sắc! Bạn đã nắm vững kiến thức về Tư tưởng Hồ Chí Minh.";
         resultDiv.className = 'quiz-result correct alert alert-success';
         resultIcon = '<i class="bi bi-trophy-fill me-2"></i>';
     } else if (percentage >= 60) {
@@ -560,7 +742,7 @@ function checkQuiz() {
         resultDiv.className = 'quiz-result correct alert alert-info';
         resultIcon = '<i class="bi bi-award-fill me-2"></i>';
     } else {
-        resultText += " - Bạn cần học thêm về lịch sử Chủ nghĩa Mác-Lê-nin.";
+        resultText += " - Bạn cần học thêm về Tư tưởng Hồ Chí Minh.";
         resultDiv.className = 'quiz-result incorrect alert alert-warning';
         resultIcon = '<i class="bi bi-exclamation-triangle-fill me-2"></i>';
     }
@@ -804,11 +986,11 @@ function createToastContainer() {
 
 // Enhanced email functionality
 function openFeedbackEmail(type) {
-    const subject = encodeURIComponent(`${type} - Triết học Mác-Lê-nin`);
+    const subject = encodeURIComponent(`${type} - Tư tưởng Hồ Chí Minh`);
     const body = encodeURIComponent(`
 Xin chào nhóm phát triển,
 
-Tôi muốn ${type.toLowerCase()} về website Triết học Mác-Lê-nin:
+Tôi muốn ${type.toLowerCase()} về website Tư tưởng Hồ Chí Minh:
 
 [Vui lòng mô tả chi tiết ở đây]
 
