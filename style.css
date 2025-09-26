@@ -511,7 +511,7 @@ body::before {
 
 /* Modal Styling */
 .classical-modal .modal-content {
-    max-height: 100px;
+    max-height: 200px;
     background: var(--parchment-gradient);
     border: 3px solid var(--classical-primary);
     border-radius: var(--border-radius);
@@ -1094,9 +1094,9 @@ section h2::after {
     padding: 2rem;
     border: 3px solid #8b7355;
     border-radius: 15px;
-    width: 80%;
+    width: 100%;
     max-width: 700px;
-    max-height: 80vh;
+    max-height: 100vh;
     overflow-y: auto;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     position: relative;
