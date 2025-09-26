@@ -23,8 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
         offset: 100
     });
     
-    // Initialize Bootstrap Modal
-    milestoneModal = new bootstrap.Modal(document.getElementById('milestoneModal'));
+    // Initialize Bootstrap Modal (only if exists)
+    const milestoneModalElement = document.getElementById('milestoneModal');
+    if (milestoneModalElement) {
+        milestoneModal = new bootstrap.Modal(milestoneModalElement);
+    }
     
     setupEventListeners();
     updateNavigationButtons();
@@ -552,14 +555,15 @@ const milestoneDetails = {
     }
 };
 
-// Setup event listener
- fu
-
-
+// Setup event listeners
 function setupEventListeners() {
-    // Timeline navigation
-    prevBtn.addEventListener('click', navigatePrevious);
-    nextBtn.addEventListener('click', navigateNext);
+    // Timeline navigation (only if elements exist)
+    if (prevBtn) {
+        prevBtn.addEventListener('click', navigatePrevious);
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', navigateNext);
+    }
     
     // Milestone cards
     
@@ -623,6 +627,10 @@ function getMaxScrollPosition() {
 }
 
 function updateNavigationButtons() {
+    if (!prevBtn || !nextBtn) {
+        return; // Skip if timeline buttons don't exist
+    }
+    
     const maxPosition = getMaxScrollPosition();
     
     prevBtn.disabled = currentPosition <= 0;
@@ -1062,3 +1070,518 @@ function trackUserEngagement() {
 // Initialize engagement tracking
 window.loadTime = Date.now();
 trackUserEngagement();
+
+// ===== NEW COMPREHENSIVE QUIZ SYSTEM =====
+// 10 câu hỏi toàn diện về Tư tưởng Hồ Chí Minh
+
+const comprehensiveQuizData = [
+    {
+        id: 1,
+        question: "Câu nói nổi tiếng nào của Hồ Chí Minh thể hiện tư tưởng yêu nước?",
+        options: [
+            "A. Dân là gốc",
+            "B. Không có gì quý hơn độc lập tự do", 
+            "C. Cần, kiệm, liêm, chính",
+            "D. Học, học nữa, học mãi"
+        ],
+        correct: 1, // B
+        hint: "Đây là câu nói được khắc trên lăng Chủ tịch Hồ Chí Minh",
+        explanation: "Câu nói 'Không có gì quý hơn độc lập tự do' thể hiện rõ nhất tư tưởng yêu nước và khát vọng độc lập dân tộc của Hồ Chí Minh."
+    },
+    {
+        id: 2,
+        question: "Tư tưởng dân chủ của Hồ Chí Minh được thể hiện qua câu nói nào?",
+        options: [
+            "A. Dân là gốc",
+            "B. Đảng là đại diện của nhân dân",
+            "C. Vì dân, vì nước",
+            "D. Tất cả đều đúng"
+        ],
+        correct: 3, // D
+        hint: "Tư tưởng dân chủ của Bác được thể hiện qua nhiều câu nói nổi tiếng",
+        explanation: "Tất cả các câu nói này đều thể hiện tư tưởng dân chủ của Hồ Chí Minh: 'Dân là gốc' khẳng định vai trò chủ đạo của nhân dân, các câu còn lại nhấn mạnh việc phục vụ nhân dân."
+    },
+    {
+        id: 3,
+        question: "Hồ Chí Minh sinh năm nào và tên thật là gì?",
+        options: [
+            "A. 1889 - Nguyễn Tất Thành",
+            "B. 1890 - Nguyễn Sinh Cung", 
+            "C. 1891 - Nguyễn Ái Quốc",
+            "D. 1892 - Hồ Chí Minh"
+        ],
+        correct: 1, // B
+        hint: "Bác sinh vào năm Canh Dần, tên thật là tên lúc mới sinh",
+        explanation: "Hồ Chí Minh sinh ngày 19/5/1890 tại làng Sen, xã Nam Đàn, tỉnh Nghệ An với tên thật là Nguyễn Sinh Cung."
+    },
+    {
+        id: 4,
+        question: "Đức tính 'Cần, kiệm, liêm, chính' áp dụng cho đối tượng nào?",
+        options: [
+            "A. Chỉ cán bộ lãnh đạo",
+            "B. Chỉ đảng viên",
+            "C. Mọi người dân Việt Nam",
+            "D. Chỉ công chức nhà nước"
+        ],
+        correct: 2, // C
+        hint: "Bác Hồ mong muốn toàn dân tộc Việt Nam đều có phẩm chất này",
+        explanation: "Tuy ban đầu dành cho cán bộ, đảng viên, nhưng Bác Hồ mong muốn đức tính 'Cần, kiệm, liêm, chính' trở thành phẩm chất của mọi người dân Việt Nam."
+    },
+    {
+        id: 5,
+        question: "Tuyên ngôn Độc lập được Hồ Chí Minh đọc vào ngày nào?",
+        options: [
+            "A. 19/8/1945",
+            "B. 2/9/1945",
+            "C. 30/4/1945",
+            "D. 1/1/1946"
+        ],
+        correct: 1, // B
+        hint: "Đây là ngày Quốc khánh nước Việt Nam Dân chủ Cộng hòa",
+        explanation: "Ngày 2/9/1945, tại Quảng trường Ba Đình, Hà Nội, Chủ tịch Hồ Chí Minh đã đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa."
+    },
+    {
+        id: 6,
+        question: "Tác phẩm 'Nhật ký trong tù' được viết trong hoàn cảnh nào?",
+        options: [
+            "A. Khi bị Pháp bắt giam",
+            "B. Khi bị Trung Quốc giam giữ (1942-1943)",
+            "C. Trong thời gian ở Paris",
+            "D. Khi trốn ở các hang động"
+        ],
+        correct: 1, // B
+        hint: "Đây là thời gian Bác bị giam tại Trung Quốc khi đang tìm đường cứu nước",
+        explanation: "'Nhật ký trong tù' là tập thơ Bác Hồ viết trong 13 tháng bị chính quyền Tưởng Giới Thạch giam giữ tại Trung Quốc (1942-1943)."
+    },
+    {
+        id: 7,
+        question: "Ý nghĩa của câu 'Học, học nữa, học mãi' là gì?",
+        options: [
+            "A. Chỉ khuyến khích việc học tập trong trường học",
+            "B. Tinh thần học tập suốt đời và từ mọi nguồn",
+            "C. Chỉ học lý thuyết chính trị",
+            "D. Học chỉ để lấy bằng cấp"
+        ],
+        correct: 1, // B
+        hint: "Bác nhấn mạnh việc học từ sách vở, từ thực tiễn, từ nhân dân",
+        explanation: "'Học, học nữa, học mãi' thể hiện tinh thần học tập suốt đời, học từ sách vở, từ thực tiễn cuộc sống và từ nhân dân để không ngừng hoàn thiện bản thân."
+    },
+    {
+        id: 8,
+        question: "Tư tưởng Hồ Chí Minh về xây dựng Đảng được thể hiện qua nguyên tắc nào?",
+        options: [
+            "A. Đảng phải trong sạch, vững mạnh",
+            "B. Đảng là đại diện trung thành của nhân dân",
+            "C. Đảng viên phải là người tốt, việc tốt",
+            "D. Tất cả đều đúng"
+        ],
+        correct: 3, // D
+        hint: "Bác có nhiều tư tưởng toàn diện về xây dựng Đảng",
+        explanation: "Tư tưởng của Hồ Chí Minh về xây dựng Đảng rất toàn diện, bao gồm việc giữ gìn sự trong sạch, đại diện cho nhân dân và từng đảng viên phải là tấm gương."
+    },
+    {
+        id: 9,
+        question: "Trong tư tưởng văn hóa, Hồ Chí Minh coi trọng điều gì nhất?",
+        options: [
+            "A. Dân tộc tính - tính khoa học - tính đại chúng",
+            "B. Chỉ giữ gìn truyền thống cũ",
+            "C. Chỉ học tập văn hóa phương Tây",
+            "D. Chỉ phát triển văn hóa mới"
+        ],
+        correct: 0, // A
+        hint: "Ba tính chất cơ bản của nền văn hóa Việt Nam theo Bác Hồ",
+        explanation: "Theo Hồ Chí Minh, văn hóa Việt Nam phải có ba tính chất: dân tộc tính (giữ bản sắc), tính khoa học (tiến bộ), tính đại chúng (phục vụ nhân dân)."
+    },
+    {
+        id: 10,
+        question: "Tư tưởng Hồ Chí Minh có ý nghĩa gì đối với thời đại hiện nay?",
+        options: [
+            "A. Chỉ có giá trị lịch sử",
+            "B. Giá trị định hướng phát triển đất nước và con người",
+            "C. Chỉ áp dụng cho chính trị",
+            "D. Không còn phù hợp"
+        ],
+        correct: 1, // B
+        hint: "Tư tưởng của Bác vẫn có giá trị thời đại và định hướng",
+        explanation: "Tư tưởng Hồ Chí Minh không chỉ có giá trị lịch sử mà còn là kim chỉ nam định hướng phát triển đất nước và hoàn thiện nhân cách con người Việt Nam hiện đại."
+    }
+];
+
+// Quiz state management
+let currentQuizState = {
+    currentQuestion: 0,
+    answers: {},
+    score: 0,
+    startTime: null,
+    timer: null,
+    hintsUsed: 0
+};
+
+// Initialize quiz system
+function initializeQuiz() {
+    console.log('initializeQuiz called');
+    
+    const questionText = document.getElementById('questionText');
+    const optionsContainer = document.getElementById('optionsContainer');
+    
+    if (!questionText || !optionsContainer) {
+        console.log('Quiz elements not found - not on quiz page');
+        return; // Not on quiz page
+    }
+    
+    console.log('Quiz elements found - initializing quiz');
+    
+    currentQuizState = {
+        currentQuestion: 0,
+        answers: {},
+        score: 0,
+        startTime: Date.now(),
+        timer: null,
+        hintsUsed: 0
+    };
+    
+    // Make current quiz state available globally after initialization
+    window.currentQuizState = currentQuizState;
+    
+    // Make sure we have questions data
+    if (!comprehensiveQuizData || comprehensiveQuizData.length === 0) {
+        console.error('Quiz data not available');
+        questionText.textContent = 'Lỗi: Không có dữ liệu câu hỏi';
+        return;
+    }
+    
+    console.log('Starting quiz with', comprehensiveQuizData.length, 'questions');
+    
+    displayQuestion();
+    startTimer();
+    updateProgressBar();
+    setupQuizEventListeners();
+}
+
+// Display current question
+function displayQuestion() {
+    console.log('displayQuestion called for question', currentQuizState.currentQuestion);
+    
+    // Validation
+    if (!comprehensiveQuizData || currentQuizState.currentQuestion >= comprehensiveQuizData.length) {
+        console.error('Invalid question index or no quiz data');
+        return;
+    }
+    
+    const questionData = comprehensiveQuizData[currentQuizState.currentQuestion];
+    console.log('Question data:', questionData);
+    
+    // Update question number and text
+    const questionNumberEl = document.getElementById('questionNumber');
+    const questionTextEl = document.getElementById('questionText');
+    
+    if (questionNumberEl) questionNumberEl.textContent = currentQuizState.currentQuestion + 1;
+    if (questionTextEl) questionTextEl.textContent = questionData.question;
+    
+    // Create options
+    const optionsContainer = document.getElementById('optionsContainer');
+    if (!optionsContainer) {
+        console.error('Options container not found');
+        return;
+    }
+    
+    optionsContainer.innerHTML = '';
+    
+    questionData.options.forEach((option, index) => {
+        const optionDiv = document.createElement('div');
+        optionDiv.className = 'form-check option-item mb-3';
+        
+        const questionName = `question_${currentQuizState.currentQuestion}`;
+        const optionId = `q${currentQuizState.currentQuestion}_option${index}`;
+        
+        optionDiv.innerHTML = `
+            <input class="form-check-input quiz-option" type="radio" name="${questionName}" value="${index}" id="${optionId}">
+            <label class="form-check-label" for="${optionId}">
+                ${option}
+            </label>
+        `;
+        
+        optionsContainer.appendChild(optionDiv);
+    });
+    
+    console.log('Created', questionData.options.length, 'options');
+    
+    // Add event listeners to new radio buttons
+    const radioButtons = optionsContainer.querySelectorAll('input[type="radio"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Answer selected:', this.value);
+                currentQuizState.answers[currentQuizState.currentQuestion] = parseInt(this.value);
+                updateQuizNavigation();
+                updateScore();
+                showExplanation(); // Show explanation after answering
+            }
+        });
+    });
+    
+    // Update navigation buttons
+    updateQuizNavigation();
+    
+    // Hide hint and explanation
+    document.getElementById('hintContainer').classList.add('d-none');
+    document.getElementById('explanationContainer').classList.add('d-none');
+    
+    // Restore previous answer if exists
+    if (currentQuizState.answers[currentQuizState.currentQuestion] !== undefined) {
+        const savedAnswer = currentQuizState.answers[currentQuizState.currentQuestion];
+        const questionName = `question_${currentQuizState.currentQuestion}`;
+        const savedRadio = document.querySelector(`input[name="${questionName}"][value="${savedAnswer}"]`);
+        if (savedRadio) {
+            savedRadio.checked = true;
+            document.getElementById('nextBtn').disabled = false;
+        }
+    }
+}
+
+// Update navigation buttons
+function updateQuizNavigation() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Previous button
+    prevBtn.disabled = currentQuizState.currentQuestion === 0;
+    
+    // Next/Submit button
+    if (currentQuizState.currentQuestion === comprehensiveQuizData.length - 1) {
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'inline-block';
+    } else {
+        nextBtn.style.display = 'inline-block';
+        submitBtn.style.display = 'none';
+    }
+    
+    // Check if answer is selected for current question
+    const questionName = `question_${currentQuizState.currentQuestion}`;
+    const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+    nextBtn.disabled = !selectedAnswer;
+}
+
+// Setup quiz event listeners
+function setupQuizEventListeners() {
+    // Navigation buttons
+    document.getElementById('prevBtn').addEventListener('click', previousQuestion);
+    document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+    document.getElementById('submitBtn').addEventListener('click', submitQuiz);
+    document.getElementById('skipBtn').addEventListener('click', skipQuestion);
+    document.getElementById('hintBtn').addEventListener('click', showHint);
+    
+    // Restart button
+    if (document.getElementById('restartBtn')) {
+        document.getElementById('restartBtn').addEventListener('click', restartQuiz);
+    }
+}
+
+// Navigate to previous question
+function previousQuestion() {
+    if (currentQuizState.currentQuestion > 0) {
+        currentQuizState.currentQuestion--;
+        displayQuestion();
+        updateProgressBar();
+    }
+}
+
+// Navigate to next question
+function nextQuestion() {
+    if (currentQuizState.currentQuestion < comprehensiveQuizData.length - 1) {
+        currentQuizState.currentQuestion++;
+        displayQuestion();
+        updateProgressBar();
+    }
+}
+
+// Skip current question
+function skipQuestion() {
+    if (currentQuizState.currentQuestion < comprehensiveQuizData.length - 1) {
+        // Mark as skipped (no answer saved)
+        nextQuestion();
+    } else {
+        // Last question, go to submit
+        submitQuiz();
+    }
+}
+
+// Show hint for current question
+function showHint() {
+    const questionData = comprehensiveQuizData[currentQuizState.currentQuestion];
+    const hintContainer = document.getElementById('hintContainer');
+    const hintText = document.getElementById('hintText');
+    
+    hintText.textContent = questionData.hint;
+    hintContainer.classList.remove('d-none');
+    
+    currentQuizState.hintsUsed++;
+}
+
+// Show explanation after answering
+function showExplanation() {
+    const questionData = comprehensiveQuizData[currentQuizState.currentQuestion];
+    const userAnswer = currentQuizState.answers[currentQuizState.currentQuestion];
+    const correctAnswer = questionData.correct;
+    
+    const explanationContainer = document.getElementById('explanationContainer');
+    const explanationText = document.getElementById('explanationText');
+    
+    // Set explanation text
+    explanationText.textContent = questionData.explanation;
+    
+    // Change container class based on correctness
+    if (userAnswer === correctAnswer) {
+        explanationContainer.className = 'alert alert-success mt-3';
+    } else {
+        explanationContainer.className = 'alert alert-warning mt-3';
+    }
+    
+    // Show the explanation
+    explanationContainer.classList.remove('d-none');
+}
+
+// Update progress bar
+function updateProgressBar() {
+    const progress = ((currentQuizState.currentQuestion + 1) / comprehensiveQuizData.length) * 100;
+    document.getElementById('progressBar').style.width = `${progress}%`;
+}
+
+// Update live score
+function updateScore() {
+    const answeredCount = Object.keys(currentQuizState.answers).length;
+    let correctCount = 0;
+    
+    for (let questionIndex in currentQuizState.answers) {
+        const userAnswer = currentQuizState.answers[questionIndex];
+        const correctAnswer = comprehensiveQuizData[questionIndex].correct;
+        if (userAnswer === correctAnswer) {
+            correctCount++;
+        }
+    }
+    
+    document.getElementById('currentScore').textContent = correctCount;
+}
+
+// Start timer
+function startTimer() {
+    currentQuizState.timer = setInterval(function() {
+        const elapsed = Math.floor((Date.now() - currentQuizState.startTime) / 1000);
+        const minutes = Math.floor(elapsed / 60);
+        const seconds = elapsed % 60;
+        
+        document.getElementById('timeSpent').textContent = 
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }, 1000);
+}
+
+// Submit quiz and show results
+function submitQuiz() {
+    clearInterval(currentQuizState.timer);
+    
+    // Calculate final results
+    const totalQuestions = comprehensiveQuizData.length;
+    const answeredCount = Object.keys(currentQuizState.answers).length;
+    let correctCount = 0;
+    
+    for (let questionIndex in currentQuizState.answers) {
+        const userAnswer = currentQuizState.answers[questionIndex];
+        const correctAnswer = comprehensiveQuizData[questionIndex].correct;
+        if (userAnswer === correctAnswer) {
+            correctCount++;
+        }
+    }
+    
+    const incorrectCount = answeredCount - correctCount;
+    const skippedCount = totalQuestions - answeredCount;
+    const finalScore = correctCount;
+    
+    // Show results
+    document.querySelector('.container').style.display = 'none';
+    document.getElementById('resultsSection').classList.remove('d-none');
+    
+    // Update result displays
+    document.getElementById('finalScore').textContent = finalScore;
+    document.getElementById('correctAnswers').textContent = correctCount;
+    document.getElementById('incorrectAnswers').textContent = incorrectCount;
+    document.getElementById('skippedAnswers').textContent = skippedCount;
+    
+    // Show performance message
+    let message = '';
+    if (finalScore >= 8) {
+        message = '🎉 Xuất sắc! Bạn hiểu rất rõ về Tư tưởng Hồ Chí Minh!';
+    } else if (finalScore >= 6) {
+        message = '👍 Tốt! Bạn có kiến thức khá tốt về chủ đề này.';
+    } else if (finalScore >= 4) {
+        message = '📚 Khá! Hãy ôn tập thêm để nắm vững hơn.';
+    } else {
+        message = '💪 Cần cố gắng thêm! Hãy học thêm và thử lại.';
+    }
+    
+    document.getElementById('finalMessage').textContent = message;
+    
+    // Scroll to results
+    document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Restart quiz
+function restartQuiz() {
+    // Clear existing timer
+    if (currentQuizState.timer) {
+        clearInterval(currentQuizState.timer);
+    }
+    
+    // Reset state
+    currentQuizState = {
+        currentQuestion: 0,
+        answers: {},
+        score: 0,
+        startTime: Date.now(),
+        timer: null,
+        hintsUsed: 0
+    };
+    
+    // Show quiz, hide results
+    document.querySelector('.container').style.display = 'block';
+    document.getElementById('resultsSection').classList.add('d-none');
+    
+    // Reset display elements
+    document.getElementById('currentScore').textContent = '0';
+    
+    // Restart
+    displayQuestion();
+    startTimer();
+    updateProgressBar();
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Make functions globally available
+window.initializeQuiz = initializeQuiz;
+window.comprehensiveQuizData = comprehensiveQuizData;
+window.displayQuestion = displayQuestion;
+window.updateQuizNavigation = updateQuizNavigation;
+window.previousQuestion = previousQuestion;
+window.nextQuestion = nextQuestion;
+window.skipQuestion = skipQuestion;
+window.showHint = showHint;
+window.showExplanation = showExplanation;
+window.submitQuiz = submitQuiz;
+window.restartQuiz = restartQuiz;
+
+// Auto-initialize if we're on the quiz page
+function autoInitializeQuiz() {
+    if (document.getElementById('questionText')) {
+        console.log('Auto-initializing quiz from script.js');
+        initializeQuiz();
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', autoInitializeQuiz);
+} else {
+    // DOM is already loaded
+    setTimeout(autoInitializeQuiz, 100);
+}
